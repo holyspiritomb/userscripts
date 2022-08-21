@@ -8,7 +8,7 @@
 // @author      holyspiritomb
 // @run-at      document-end
 // @require     https://code.jquery.com/jquery-latest.min.js
-// @require     https://gist.github.com/raw/2625891/waitForKeyElements.js
+// @require     https://greasyfork.org/scripts/383527-wait-for-key-elements/code/Wait_for_key_elements.js?version=701631
 // @inject-into page
 // @icon        https://www.google.com/s2/favicons?domain=tumblr.com
 // @description Hides conversations with specific users, and stops those users from appearing as suggested recipients of posts when you click share.
