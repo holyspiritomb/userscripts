@@ -4,14 +4,14 @@
 // @match       https://www.tumblr.com/*
 // @grant       GM_getValue
 // @grant       GM_addStyle
-// @version     0.0.2
+// @version     0.0.3
 // @author      holyspiritomb
 // @run-at      document-end
 // @require     https://code.jquery.com/jquery-latest.min.js
 // @require     https://greasyfork.org/scripts/383527-wait-for-key-elements/code/Wait_for_key_elements.js?version=701631
 // @inject-into page
 // @icon        https://www.google.com/s2/favicons?domain=tumblr.com
-// @description Hides conversations with specific users, and stops those users from appearing as suggested recipients of posts when you click share.
+// @description Hides conversations with specific users, and stops those users from appearing as suggested recipients of posts when you click share. I wrote this in order to hide messages from a deceased friend without blocking them or deleting the conversations.
 // ==/UserScript==
 
 let hiddenFriends = Array.from(GM_getValue("hidethese","staff"));
