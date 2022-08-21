@@ -4,7 +4,7 @@
 // @match       https://www.tumblr.com/*
 // @grant       GM_getValue
 // @grant       GM_addStyle
-// @version     0.0.1
+// @version     0.0.2
 // @author      holyspiritomb
 // @run-at      document-end
 // @require     https://code.jquery.com/jquery-latest.min.js
