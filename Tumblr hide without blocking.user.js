@@ -13,7 +13,7 @@
 // @require     https://greasyfork.org/scripts/446257-waitforkeyelements-utility-function/code/waitForKeyElements%20utility%20function.js?version=1059316
 // @inject-into page
 // @icon        https://www.google.com/s2/favicons?domain=tumblr.com
-// @description Hides conversations with specific users, and stops those users from appearing as suggested recipients of posts when you click share.
+// @description Hides conversations in the messages dialog with specific users, and stops those users from appearing as suggested recipients of posts when you click share.
 // ==/UserScript==
 
 let valueArrayList = GM_listValues();
