@@ -27,7 +27,7 @@ function addDownloadLink(bookElem) {
     if (bookElem == null) {
         return;
     }
-    let bookTitle = document.querySelector("meta[property='og:title']").attr("content");
+    let bookTitle = document.querySelector("meta[property='og:title']").content;
     console.log(bookTitle);
     let link = document.createElement('a');
     link.href =  createURL(bookTitle);
