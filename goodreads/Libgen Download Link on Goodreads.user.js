@@ -13,15 +13,13 @@
 // @description Based on the firefox extension by Saeed Moqadam https://addons.mozilla.org/en-US/firefox/addon/libgen-download-link/ and tested with Adguard for Android (on Bromite, Kiwi Browser, and Android Vivaldi) and with Violentmonkey on Iceraven, desktop Firefox, and desktop Vivaldi.
 // ==/UserScript==
 
-console.log("I'm here");
-
 function createURL(title) {
     title = title.replaceAll(' ', '+');
     title = title.replaceAll(/\(.*\)/g, '');
     title = title.replace('…', '');
     title = title.trim();
+    title = encodeURI(title);
     let url = `http://libgen.gs/index.php?req=${title}&lg_topic=libgen&open=0&view=simple&res=25&phrase=1&column=def`;
-    url = encodeURI(url);
     return url;
 }
 
@@ -29,7 +27,8 @@ function addDownloadLink(bookElem) {
     if (bookElem == null) {
         return;
     }
-    let bookTitle = bookElem.innerText;
+    let bookTitle = document.querySelector("meta[property='og:title']").attr("content");
+    console.log(bookTitle);
     let link = document.createElement('a');
     link.href =  createURL(bookTitle);
 	link.style.display = "inline-block";
@@ -46,30 +45,27 @@ function addDownloadLink(bookElem) {
 	link.style.borderRadius = "50%";
 	link.style.textDecoration = "none";
     link.style.filter = "invert(100%)";
-    return(link);
+    bookElem.before(link);
+    //return(link);
 }
 
-// desktop
+// desktop, old
 $('h1#bookTitle').each(function() {
-    var dlLink = addDownloadLink( $(this) );
-    $(this).before(dlLink);
+    addDownloadLink( $(this) );
 });
-// mobile single book pages
+// mobile single book pages, old
 $('h1.bookTitle>cite[itemprop="name"]').each(function() {
-    var dlLink = addDownloadLink( $(this)[0] );
-    $(this).before(dlLink);
+    addDownloadLink( $(this)[0] );
     $('div.pageContent.showBook').style.marginTop = "50px";
 });
-//mobile single book that's in a series
+//mobile single book that's in a series, old
 $('h1.bookTitle>span[itemprop="name"]').each(function() {
-    var dlLink = addDownloadLink( $(this)[0] );
-    $(this).before(dlLink);
+    addDownloadLink( $(this)[0] );
 });
-//book author on mobile single book page
+//book author on mobile single book page, old
 $('h2.bookAuthor span[itemprop="author"]>a.authorName').each(function() {
-    var dlLink = addDownloadLink( $(this)[0] );
     nearestPlace = $(this).closest('span');
-    nearestPlace.before(dlLink);
+    addDownloadLink(nearestPlace);
 });
 //mobile shelf pages
 // $('li.book>cite[itemprop="name"]').each(function() {
@@ -78,13 +74,11 @@ $('h2.bookAuthor span[itemprop="author"]>a.authorName').each(function() {
 // });
 // series pages
 $('a[href^="/book/show"]>span[itemprop="name"]').each(function() {
-    var dlLink = addDownloadLink( $(this)[0] );
-    $(this).before(dlLink);
+    addDownloadLink( $(this)[0] );
 });
 // new goodreads layout
 setTimeout( function () {
     $('h1[data-testid="bookTitle"]').each(function() {
-        var dlLink = addDownloadLink( $(this)[0] );
-        $(this).before(dlLink);
+        addDownloadLink( $(this)[0] );
     });
 }, 5000);
