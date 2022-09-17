@@ -81,8 +81,10 @@ $('a[href^="/book/show"]>span[itemprop="name"]').each(function() {
     var dlLink = addDownloadLink( $(this)[0] );
     $(this).before(dlLink);
 });
-// new gr layout (not working yet)
-$('h1[data-testid="bookTitle"]').each(function() {
-    var dlLink = addDownloadLink( $(this)[0] );
-    $(this).before(dlLink);
-});
+// new goodreads layout
+setTimeout( function () {
+    $('h1[data-testid="bookTitle"]').each(function() {
+        var dlLink = addDownloadLink( $(this)[0] );
+        $(this).before(dlLink);
+    });
+}, 5000);
