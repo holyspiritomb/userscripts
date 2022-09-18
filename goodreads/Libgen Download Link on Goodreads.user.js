@@ -40,7 +40,7 @@ function addDownloadLink(bookElem) {
     link.style.backgroundColor = "#111";
     link.style.fontSize="20px";
     link.style.fontWeight="normal";
-    link.innerHTML = "<span style='font-size:inherit !important;color:#111 !important;'>&darr;</span>";
+    link.innerHTML = "<span style='font-size:inherit !important;color:#ddd'>&darr;</span>";
 	link.style.lineHeight = "25px";
 	link.style.borderRadius = "50%";
 	link.style.textDecoration = "none";
