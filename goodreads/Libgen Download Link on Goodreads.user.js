@@ -20,13 +20,11 @@ function createURL(title) {
     title = title.trim();
     title = encodeURI(title);
     let url = `http://libgen.gs/index.php?req=${title}&lg_topic=libgen&open=0&view=simple&res=25&phrase=1&column=def`;
+    console.log(url);
     return url;
 }
 
 function addDownloadLink(bookElem) {
-    if (bookElem == null) {
-        return;
-    }
     let bookTitle = document.querySelector("meta[property='og:title']").content;
     console.log(bookTitle);
     let link = document.createElement('a');
@@ -50,13 +48,10 @@ function addDownloadLink(bookElem) {
 }
 
 // desktop, old
-$('h1#bookTitle').each(function() {
-    addDownloadLink( $(this) );
-});
 // mobile single book pages, old
 $('h1.bookTitle>cite[itemprop="name"]').each(function() {
     addDownloadLink( $(this)[0] );
-    $('div.pageContent.showBook').style.marginTop = "50px";
+    //$('div.pageContent.showBook').style.marginTop = "50px";
 });
 //mobile single book that's in a series, old
 $('h1.bookTitle>span[itemprop="name"]').each(function() {
@@ -64,7 +59,7 @@ $('h1.bookTitle>span[itemprop="name"]').each(function() {
 });
 //book author on mobile single book page, old
 $('h2.bookAuthor span[itemprop="author"]>a.authorName').each(function() {
-    nearestPlace = $(this).closest('span');
+    let nearestPlace = $(this).closest('span');
     addDownloadLink(nearestPlace);
 });
 //mobile shelf pages
@@ -81,4 +76,8 @@ setTimeout( function () {
     $('h1[data-testid="bookTitle"]').each(function() {
         addDownloadLink( $(this)[0] );
     });
-}, 5000);
+    $('h1#bookTitle').each(function() {
+        console.log("hi tjere");
+        addDownloadLink( $(this) );
+    });
+}, 10000);
