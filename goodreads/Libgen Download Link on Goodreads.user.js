@@ -40,8 +40,8 @@ function addDownloadLink(bookElem) {
 	link.style.lineHeight = "25px";
     link.style.fontWeight="normal";
     let arrow = document.createElement("span");
-    arrow.style.fontSize = "inherit";
-    arrow.style.lineHeight = "inherit";
+    arrow.style.fontSize="20px";
+	arrow.style.lineHeight = "25px";
     arrow.style.color = "#ddd";
     arrow.innerHTML = "&darr;";
     link.append(arrow);
