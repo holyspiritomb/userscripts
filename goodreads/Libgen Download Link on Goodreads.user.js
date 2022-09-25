@@ -37,9 +37,14 @@ function addDownloadLink(bookElem) {
     link.style.textAlign = "center";
     link.style.backgroundColor = "#111";
     link.style.fontSize="20px";
-    link.style.fontWeight="normal";
-    link.innerHTML = "<span style='font-size:inherit !important;color:#ddd'>&darr;</span>";
 	link.style.lineHeight = "25px";
+    link.style.fontWeight="normal";
+    let arrow = document.createElement("span");
+    arrow.style.fontSize = "inherit";
+    arrow.style.lineHeight = "inherit";
+    arrow.style.color = "#ddd";
+    arrow.innerHTML = "&darr;";
+    link.append(arrow);
 	link.style.borderRadius = "50%";
 	link.style.textDecoration = "none";
     link.style.filter = "invert(100%)";
@@ -49,16 +54,16 @@ function addDownloadLink(bookElem) {
 
 // desktop, old
 // mobile single book pages, old
-$('h1.bookTitle>cite[itemprop="name"]').each(function() {
+$('h1.bookTitle>cite[itemprop="name"]').each(function () {
     addDownloadLink( $(this)[0] );
     //$('div.pageContent.showBook').style.marginTop = "50px";
 });
 //mobile single book that's in a series, old
-$('h1.bookTitle>span[itemprop="name"]').each(function() {
+$('h1.bookTitle>span[itemprop="name"]').each(function () {
     addDownloadLink( $(this)[0] );
 });
 //book author on mobile single book page, old
-$('h2.bookAuthor span[itemprop="author"]>a.authorName').each(function() {
+$('h2.bookAuthor span[itemprop="author"]>a.authorName').each(function () {
     let nearestPlace = $(this).closest('span');
     addDownloadLink(nearestPlace);
 });
@@ -68,16 +73,15 @@ $('h2.bookAuthor span[itemprop="author"]>a.authorName').each(function() {
 //     $(this).after(dlLink);
 // });
 // series pages
-$('a[href^="/book/show"]>span[itemprop="name"]').each(function() {
+$('a[href^="/book/show"]>span[itemprop="name"]').each(function () {
     addDownloadLink( $(this)[0] );
 });
 // new goodreads layout
 setTimeout( function () {
-    $('h1[data-testid="bookTitle"]').each(function() {
+    $('h1#bookTitle').each(function() {
         addDownloadLink( $(this)[0] );
     });
-    $('h1#bookTitle').each(function() {
-        console.log("hi tjere");
-        addDownloadLink( $(this) );
+    $('h1[data-testid="bookTitle"]').each(function () {
+        addDownloadLink( $(this)[0] );
     });
-}, 10000);
+}, 5000);
