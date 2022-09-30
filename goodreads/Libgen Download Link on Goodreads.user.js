@@ -5,7 +5,7 @@
 // @match       *://www.goodreads.com/review/list/*
 // @match       *://www.goodreads.com/series/*
 // @grant       none
-// @version     1.0
+// @version     1.1
 // @license     MIT
 // @run-at      document-end
 // @author      holyspiritomb
