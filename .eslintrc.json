@@ -36,10 +36,6 @@
             "warn",
             "never"
         ],
-        "eol-last": [
-            "warn",
-            "never"
-        ],
         "indent": [
             "warn",
             4
