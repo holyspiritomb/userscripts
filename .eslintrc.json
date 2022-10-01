@@ -1,7 +1,6 @@
 {
     "env": {
         "browser": true,
-        "es2021": true,
         "greasemonkey": true,
         "jquery": true
     },
@@ -60,10 +59,20 @@
             "error",
             {"before": false, "after": true }
         ],
+        "semi-style": ["error", "last"],
         "space-infix-ops": ["error"],
         "space-unary-ops": [
             "error",
-            {"nonwords": true}
+            {
+                "nonwords": true, 
+                "overrides": {
+                    "!": false,
+                    "!!": false,
+                    "^=": false,
+                    "*=": false,
+                    "!=": false
+                }
+            }
         ],
         "switch-colon-spacing": [
             "warn",
