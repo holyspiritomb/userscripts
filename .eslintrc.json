@@ -1,13 +1,82 @@
 {
     "env": {
         "browser": true,
-        "commonjs": true,
-        "es2021": true
+        "greasemonkey": true,
+        "jquery": true
     },
     "extends": "eslint:recommended",
     "parserOptions": {
         "ecmaVersion": 13
     },
     "rules": {
+        "array-bracket-newline": [
+            "warn",
+            {"multiline": true, "minItems": 2}
+        ],
+        "array-bracket-spacing": [
+            "warn",
+            "always",
+            {"singleValue": false}
+        ],
+        "brace-style": [
+            "warn",
+            "1tbs",
+            {"allowSingleLine": true}
+        ],
+        "camelcase": [
+            "warn",
+            {"properties": "always", "ignoreGlobals": true}
+        ],
+        "comma-spacing":[
+            "warn",
+            {"before": false, "after": true}
+        ],
+        "computed-property-spacing": [
+            "warn",
+            "never"
+        ],
+        "indent": [
+            "warn",
+            4
+        ],
+        "key-spacing": ["warn"],
+        "linebreak-style": [
+            "error",
+            "unix"
+        ],
+        "no-redeclare": ["warn"],
+        "no-unused-vars": [
+            "warn",
+            {"vars": "local", "args": "all"}
+        ],
+        "no-whitespace-before-property": ["error"],
+        "semi": [
+            "error",
+            "always",
+            {"omitLastInOneLineBlock": true}
+        ],
+        "semi-spacing": [
+            "error",
+            {"before": false, "after": true }
+        ],
+        "semi-style": ["error", "last"],
+        "space-infix-ops": ["error"],
+        "space-unary-ops": [
+            "error",
+            {
+                "nonwords": true, 
+                "overrides": {
+                    "!": false,
+                    "!!": false,
+                    "^=": false,
+                    "*=": false,
+                    "!=": false
+                }
+            }
+        ],
+        "switch-colon-spacing": [
+            "warn",
+            {"after": true, "before": false}
+        ]
     }
 }

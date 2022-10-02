@@ -5,7 +5,7 @@
 // @match       *://www.goodreads.com/review/list/*
 // @match       *://www.goodreads.com/series/*
 // @grant       unsafeWindow
-// @version     1.0
+// @version     1.1
 // @license     MIT
 // @run-at      document-end
 // @author      holyspiritomb
@@ -19,7 +19,7 @@ function createURL(title) {
     title = title.replace('…', '');
     title = title.trim();
     title = encodeURI(title);
-    let url = `http://libgen.gs/index.php?req=${title}&lg_topic=libgen&open=0&view=simple&res=25&phrase=1&column=def`;
+    let url = `https://libgen.gs/index.php?req=${title}&lg_topic=libgen&open=0&view=simple&res=25&phrase=1&column=def`;
     console.log(url);
     return url;
 }
@@ -29,27 +29,20 @@ function addDownloadLink(bookElem) {
     console.log(bookTitle);
     let link = document.createElement('a');
     link.href =  createURL(bookTitle);
-	link.style.display = "inline-block";
-	link.style.float = "right";
+    link.style.display = "inline-block";
+    link.style.float = "right";
     link.style.height = "25px";
     link.style.width = "25px";
-    link.style.color = "#ddd";
     link.style.textAlign = "center";
-    link.style.backgroundColor = "#111";
-    link.style.fontSize="20px";
-	link.style.lineHeight = "25px";
-    link.style.fontWeight="normal";
-    let arrow = document.createElement("span");
-    arrow.style.fontSize="20px";
-	arrow.style.lineHeight = "25px";
-    arrow.style.color = "#ddd";
-    arrow.innerHTML = "&darr;";
-    link.append(arrow);
-	link.style.borderRadius = "50%";
-	link.style.textDecoration = "none";
-    link.style.filter = "invert(100%)";
+    link.style.fontSize = "20px";
+    link.style.lineHeight = "25px";
+    link.style.fontWeight = "normal";
+    link.style.textDecoration = "none";
+    link.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+        <!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. -->
+        <path fill="#222" d="M256 0C114.6 0 0 114.6 0 256S114.6 512 256 512s256-114.6 256-256S397.4 0 256 0zM127 297c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l71 71L232 120c0-13.3 10.7-24 24-24s24 10.7 24 24l0 214.1 71-71c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9L273 409c-9.4 9.4-24.6 9.4-33.9 0L127 297z"/>
+        </svg>`;
     bookElem.before(link);
-    //return(link);
 }
 
 // desktop, old

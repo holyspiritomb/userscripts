@@ -4,7 +4,7 @@
 // @match       https://www.goodreads.com/book/show/*
 // @grant       GM_setClipboard
 // @require     https://code.jquery.com/jquery-latest.min.js
-// @version     1.0.1
+// @version     1.0.2
 // @author      spiritomb
 // @run-at      document-end
 // @icon        https://www.google.com/s2/favicons?domain=goodreads.com
@@ -12,11 +12,11 @@
 // ==/UserScript==
 
 function matchASIN(href) { // adapted from getASIN function in clickhappier's userscript
-  var asinMatch;
-  if (!asinMatch) { asinMatch = href.match(/\/gp\/product\/(\w{10})/i); }
-  if (!asinMatch) { asinMatch = href.match(/\/dp\/(\w{10})/i); }
-  if (!asinMatch) { return null; }
-  return asinMatch[1];
+    var asinMatch;
+    if (!asinMatch) { asinMatch = href.match(/\/gp\/product\/(\w{10})/i) }
+    if (!asinMatch) { asinMatch = href.match(/\/dp\/(\w{10})/i) }
+    if (!asinMatch) { return null }
+    return asinMatch[1];
 }
 
 function isKindleEd() {
@@ -36,7 +36,7 @@ function addAsin(element, asin) {
     asinPrefix.id = "calibreprefix";
     asinPrefix.innerHTML = "mobi-asin:";
     asinWrapper.append(asinPrefix);
-    let asinForReal= document.createElement("span");
+    let asinForReal = document.createElement("span");
     asinForReal.id = "mobiasin";
     asinForReal.innerHTML = asin;
     asinWrapper.append(asinForReal);
@@ -45,12 +45,12 @@ function addAsin(element, asin) {
     if (asin != null){
         console.log(asin);
         element.after(asinWrapper);
-        $('span#calibreprefix').on('click',function(){
+        $('span#calibreprefix').on('click', function(){
             let clippedText = `mobi-asin:${asin}`;
             GM_setClipboard(clippedText);
             alert(`Copied "${clippedText}" to clipboard`);
         });
-        $('span#mobiasin').on('click',function(){
+        $('span#mobiasin').on('click', function(){
             GM_setClipboard(asin);
             alert(`Copied ${asin} to clipboard`);
         });
@@ -64,8 +64,7 @@ var asin;
 $('h1#bookTitle').each(function(){
     if ( isKindleEd() != null ){
         asin = $('div[itemprop=isbn]')[0].innerText;
-    }
-    else {
+    } else {
         asin = $('a.buttonBar[data-asin]').attr('data-asin');
     }
     if (asin != null){
@@ -76,8 +75,7 @@ $('h1#bookTitle').each(function(){
 $('h1.bookTitle').each(function(){
     if ( isKindleEd() != null ){
         asin = $('dd.bookAsin')[0].innerText;
-    }
-    else {
+    } else {
         asin = matchASIN( $('a.glideButton').attr('href') );
     }
     if (asin != null){
@@ -85,9 +83,9 @@ $('h1.bookTitle').each(function(){
     }
 });
 
-if ( !!( $("link[rel='stylesheet'][href*='_next']")) ) {
+if (  $("link[rel = 'stylesheet'][href *= '_next']") ) {
     setTimeout( function () {
-        var editionsURL;
+        // var editionsURL;
         var work;
         var bookData = document.querySelector("body > script#__NEXT_DATA__").textContent;
         bookData = JSON.parse(bookData);
@@ -99,18 +97,18 @@ if ( !!( $("link[rel='stylesheet'][href*='_next']")) ) {
         let fancyBookId = apollo.ROOT_QUERY[`getBookByLegacyId({"legacyId":"${legacyBookId}"})`].__ref;
         console.log(Object.keys(apollo.ROOT_QUERY));
         var details = apollo[`${fancyBookId}`].details;
-        bookFormat = details.format;
+        let bookFormat = details.format;
         if (bookFormat == "Kindle Edition") {
             asin = details.asin;
         } else {
-            for (i of Object.keys(apollo)){
+            for (const i of Object.keys(apollo)){
                 work = i.match(/^Work.+/i);
                 if (work != null){
                     break;
                 }
             }
             work = work[0];
-            editionsURL = apollo[`${work}`].editions["webUrl"];
+            // editionsURL = apollo[`${work}`].editions["webUrl"];
             let bestBookRef = apollo[`${work}`].bestBook["__ref"];
             //bestBookRef = JSON.stringify(bestBookRef);
             let bestBookPrimary = apollo[`${bestBookRef}`];
