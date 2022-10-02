@@ -4,7 +4,7 @@
 // @match       *://www.goodreads.com/book/show/*
 // @match       *://www.goodreads.com/review/list/*
 // @match       *://www.goodreads.com/series/*
-// @grant       unsafeWindow
+// @grant       none
 // @version     1.1
 // @license     MIT
 // @run-at      document-end
