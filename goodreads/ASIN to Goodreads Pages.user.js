@@ -108,7 +108,7 @@ if (  $("link[rel = 'stylesheet'][href *= '_next']") ) {
                 }
             }
             work = work[0];
-            // editionsURL = apollo[`${work}`].editions["webUrl"];
+            let editionsURL = apollo[`${work}`].editions["webUrl"];
             let bestBookRef = apollo[`${work}`].bestBook["__ref"];
             //bestBookRef = JSON.stringify(bestBookRef);
             let bestBookPrimary = apollo[`${bestBookRef}`];
@@ -118,7 +118,8 @@ if (  $("link[rel = 'stylesheet'][href *= '_next']") ) {
                 var amazURL = bestBookLinks.primaryAffiliateLink.url;
                 asin = matchASIN(amazURL);
             } else {
-                console.log("The best book according to the data isn't a Kindle link. Try another edition.");
+                console.log("The best book according to the data isn't a Kindle link. Try viewing another edition's page.");
+                console.log(editionsURL);
                 asin = null;
             }
         }
