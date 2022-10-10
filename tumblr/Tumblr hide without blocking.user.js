@@ -16,6 +16,8 @@
 // @description Hides conversations in the messages dialog with specific users, and stops those users from appearing as suggested recipients of posts when you click share.
 // ==/UserScript==
 
+/* global waitForKeyElements */
+
 let valueArrayList = GM_listValues();
 
 function inList(itemToTest, someList) {
@@ -32,7 +34,7 @@ function annotateConversations() {
         let friendName = $(this)[0].innerText;
         let conversation = $(this).closest('button');
         let convClasses = Array.from(conversation[0].classList);
-        if (convClasses.indexOf(friendName) == -1) {
+        if (convClasses.indexOf(friendName) < -1) {
             conversation.addClass(friendName);
             console.log(`added ${friendName} as class to a conversation`);
         }
@@ -46,10 +48,10 @@ if (valueArrayList) {
 
     if (hiddenRecipients[0] != "hiddenfriend") {
         console.log("processing array of hidden recipients in share popup");
-        for (friend of hiddenRecipients) {
+        for (const friend of hiddenRecipients) {
             console.log(`adding css to hide ${friend} from share popup`);
             GM_addStyle(`button[aria-label="Select ${friend}"]{display:none;}`);
-        };
+        }
     } else {
         console.log("no one to hide in the share popup");
     }
@@ -57,10 +59,10 @@ if (valueArrayList) {
     let hiddenConversations = Array.from(GM_getValue("hiddenConversations"));
 
     if (hiddenConversations[0] != "hiddenfriend") {
-        for (hiddenConversationPartner of hiddenConversations) {
+        for (const hiddenConversationPartner of hiddenConversations) {
             //console.log(`adding css rule to hide ${hiddenConversationPartner} in conversations`);
             GM_addStyle(`button[aria-label=Conversation].${hiddenConversationPartner}{display:none;}`);
-        };
+        }
         let currentPage = document.location.href;
         if (currentPage == "https://www.tumblr.com/messaging") {
             waitForKeyElements("button[aria-label='Conversation'] div.pTvJc", function() {
