@@ -2,7 +2,7 @@
 // @name        Eruda Mobile devtools
 // @namespace   holyspiritomb
 // @match       *://*/*
-// @grant       none
+// @grant       unsafeWindow
 // @version     1.0
 // @author      holyspiritomb
 // @run-at      document-start
@@ -24,18 +24,9 @@
         }
     });
     eruda.position({x: 20, y: 20});
-    eruda.show();
     let console = eruda.get('console');
-    console.config.set('catchGlobalErr', true);
-    console.config.set('displayExtraInfo', true);
-    console.config.set('displayGetterVal', true);
-    snippets.add('hello', function ()
-    {
-        console.log('Hello World!');
-    }, 'Display hello on console');
+    eruda.show();
     console.log('eruda is a console for %s.', 'mobile browsers');
     console.table([{test: 1}, {test: 2}, {test2: 3}], 'test');
     console.error(new Error('eruda'));
-    eruda.add(erudaCode);
-    console.log('Eruda code plugin added');
 })();
