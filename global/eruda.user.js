@@ -6,9 +6,9 @@
 // @version     1.0
 // @author      holyspiritomb
 // @run-at      document-start
-// @require     https://cdn.jsdelivr.net/npm/eruda
-// @require     https://cdn.jsdelivr.net/npm/eruda-code
-// @require     https://cdn.jsdelivr.net/npm/eruda-dom
+// @require     https://cdn.jsdelivr.net/npm/eruda@2.5.0/eruda.min.js
+// @require     https://cdn.jsdelivr.net/npm/eruda-code@2.0.0/eruda-code.min.js
+// @require     https://cdn.jsdelivr.net/npm/eruda-dom@2.0.0/eruda-dom.js
 // @description 9/7/2022, 5:21:16 PM
 // ==/UserScript==
 
