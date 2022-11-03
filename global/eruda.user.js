@@ -9,7 +9,7 @@
 // @require     https://cdn.jsdelivr.net/npm/eruda@2.5.0/eruda.min.js
 // @require     https://cdn.jsdelivr.net/npm/eruda-code@2.0.0/eruda-code.min.js
 // @require     https://cdn.jsdelivr.net/npm/eruda-dom@2.0.0/eruda-dom.js
-// @description 9/7/2022, 5:21:16 PM
+// @description Eruda mobile devtools as a userscript, for troubleshooting on mobile, targeting Vivaldi on Android via Adguard for Android.
 // ==/UserScript==
 
 (function () {
@@ -24,9 +24,5 @@
         }
     });
     eruda.position({x: 20, y: 20});
-    let console = eruda.get('console');
     eruda.show();
-    console.log('eruda is a console for %s.', 'mobile browsers');
-    console.table([{test: 1}, {test: 2}, {test2: 3}], 'test');
-    console.error(new Error('eruda'));
 })();
