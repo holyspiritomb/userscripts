@@ -3,7 +3,7 @@
 // @namespace   holyspiritomb
 // @match       *://*/*
 // @grant       unsafeWindow
-// @version     1.0
+// @version     1.1
 // @author      holyspiritomb
 // @run-at      document-start
 // @require     https://cdn.jsdelivr.net/npm/eruda@2.5.0/eruda.min.js
