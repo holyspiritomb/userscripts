@@ -6,9 +6,9 @@
 // @version     1.1
 // @author      holyspiritomb
 // @run-at      document-start
-// @require     https://cdn.jsdelivr.net/npm/eruda@2.5.0/eruda.min.js
-// @require     https://cdn.jsdelivr.net/npm/eruda-code@2.0.0/eruda-code.min.js
-// @require     https://cdn.jsdelivr.net/npm/eruda-dom@2.0.0/eruda-dom.js
+// @require     https://cdn.jsdelivr.net/npm/eruda@2.5.0
+// @require     https://cdn.jsdelivr.net/npm/eruda-code@2.0.0
+// @require     https://cdn.jsdelivr.net/npm/eruda-dom@2.0.0
 // @description Eruda mobile devtools as a userscript, for troubleshooting on mobile, targeting Vivaldi on Android via Adguard for Android.
 // ==/UserScript==
 
@@ -25,4 +25,5 @@
     });
     eruda.position({x: 20, y: 20});
     eruda.show();
+    eruda.show('console');
 })();
