@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Github: Victor Mono
 // @namespace    https://github.com/holyspiritomb
-// @version      1.0.0
+// @version      1.0.1
 // @license      MIT
 // @description  Makes Github's code font Victor Mono.
 // @author       holyspiritomb
@@ -12,6 +12,7 @@
 // @grant        GM_addStyle
 // @grant        GM_getResourceURL
 // @grant        unsafeWindow
+// @updateURL    https://raw.githubusercontent.com/holyspiritomb/userscripts/main/github/code-font.user.js
 // @resource     victorR https://cdn.jsdelivr.net/npm/victormono@latest/dist/woff/VictorMono-Regular.woff
 // @resource     victorRW https://cdn.jsdelivr.net/npm/victormono@latest/dist/woff2/VictorMono-Regular.woff2
 // @resource     victorI https://cdn.jsdelivr.net/npm/victormono@latest/dist/woff/VictorMono-Italic.woff
