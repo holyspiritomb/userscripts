@@ -24,7 +24,7 @@
     let victorItalic = GM_getResourceURL("victorI", false);
     let victorItalic2 = GM_getResourceURL("victorIW", false);
     var css = "";
-        css += `
+    css += `
             @font-face {
                 font-family: "Victor Mono";
                 src: url(${victorRegular2}) format("woff2"),
@@ -43,8 +43,6 @@
                 font-display: swap;
             }
             
-
-
             .CheckStep-line,
             .blob-code-inner,
             .commit-ref,
@@ -59,7 +57,11 @@
             .highlight pre,
             .markdown-body pre {
                 font-family: "Victor Mono" !important;
-            }`;
+            }
+            .pl-c, .pl-c span{
+                font-style: italic !important;
+            }
+    `;
     if (typeof GM_addStyle != "undefined") {
         GM_addStyle(css);
     } else {
