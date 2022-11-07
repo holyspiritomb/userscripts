@@ -9,6 +9,7 @@
 // @require     https://cdn.jsdelivr.net/npm/eruda@2.5.0
 // @connect     cdn.jsdelivr.net
 // @connect     https://cdn.jsdelivr.net
+// @homepageURL https://github.com/holyspiritomb/userscripts
 // @description Eruda persistent mobile devtools, for troubleshooting on mobile. Targeting mobile Vivaldi via Adguard for Android. 
 // @noframes
 // ==/UserScript==
@@ -20,6 +21,7 @@
         defaults: {theme: 'Dracula', displaySize:40, transparency:0.9}
     });
     /* eslint-enable key-spacing, array-bracket-spacing, array-bracket-newline */
+    eruda.position({x: 50, y: 50});
     let console = eruda.get('console');
     console.config.set('displayExtraInfo', true);
     console.config.set('displayIfErr', true);
@@ -41,11 +43,10 @@
     let info = eruda.get('info');
     info.add('viewportWidth', window.innerWidth);
     info.add('viewportHeight', window.innerHeight);
-    eruda.show("console");
+    eruda.show();
     var winWidth = window.innerWidth;
     if (winWidth > 700) {
         eruda.scale(2);
     }
-    eruda.position({x: 50, y: 50});
-    console.log("width", window.innerWidth);
+    eruda.show("elements");
 })();
