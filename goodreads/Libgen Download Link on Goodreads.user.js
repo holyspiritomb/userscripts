@@ -1,16 +1,17 @@
 // ==UserScript==
 // @name        Libgen Download Link on Goodreads
 // @namespace   https://github.com/holyspiritomb
+// @author      holyspiritomb
+// @version     1.1
+// @description Based on the firefox extension by Saeed Moqadam https://addons.mozilla.org/en-US/firefox/addon/libgen-download-link/ and tested with Adguard for Android (on Bromite, Kiwi Browser, and Android Vivaldi) and with Violentmonkey on Iceraven, desktop Firefox, and desktop Vivaldi.
+// @homepageURL https://github.com/holyspiritomb/userscripts
+// @license     MIT
 // @match       *://www.goodreads.com/book/show/*
 // @match       *://www.goodreads.com/review/list/*
 // @match       *://www.goodreads.com/series/*
-// @grant       none
-// @version     1.1
-// @license     MIT
 // @run-at      document-end
-// @author      holyspiritomb
+// @grant       none
 // @require     https://code.jquery.com/jquery-latest.min.js
-// @description Based on the firefox extension by Saeed Moqadam https://addons.mozilla.org/en-US/firefox/addon/libgen-download-link/ and tested with Adguard for Android (on Bromite, Kiwi Browser, and Android Vivaldi) and with Violentmonkey on Iceraven, desktop Firefox, and desktop Vivaldi.
 // ==/UserScript==
 
 function createURL(title) {
