@@ -11,7 +11,7 @@
     "rules": {
         "array-bracket-newline": [
             "warn",
-            {"multiline": true, "minItems": 2}
+            {"multiline": true, "minItems": 4}
         ],
         "array-bracket-spacing": [
             "warn",

@@ -1,61 +1,51 @@
 // ==UserScript==
-// @name        Eruda Mobile devtools
+// @name        Eruda Mobile devtools customized
 // @namespace   holyspiritomb
 // @match       *://*/*
 // @grant       none
+// @grant       property:settings
 // @version     1.1
 // @author      holyspiritomb
-// @run-at      document-start
 // @require     https://cdn.jsdelivr.net/npm/eruda@2.5.0
-// @require     https://cdn.jsdelivr.net/npm/eruda-code@2.0.0
-// @require     https://cdn.jsdelivr.net/npm/eruda-dom@2.0.0
-// @connect     chrome-extension://*
-// @description Eruda mobile devtools as a userscript, for troubleshooting on mobile, targeting Vivaldi via Adguard for Android. It doesn't work yet.
+// @connect     cdn.jsdelivr.net
+// @connect     https://cdn.jsdelivr.net
+// @description Eruda persistent mobile devtools, for troubleshooting on mobile. Targeting mobile Vivaldi via Adguard for Android. Inspired by the Andure userscript by 
+// @noframes
 // ==/UserScript==
-/* globals eruda, erudaCode, erudaDom */
+/* globals eruda */
 (function () {
-    // if (!/eruda=true/.test(window.location) && localStorage.getItem('active-eruda') != 'true') return;
+    /* eslint-disable key-spacing, array-bracket-spacing, array-bracket-newline */
     eruda.init({
-        tool: [
-            'console', 'elements', 'info', 'resources', 'sources', 'snippets'
-        ],
-        autoScale: true,
-        defaults: {
-            displaySize: 40,
-            transparency: 0.9,
-            theme: 'Material Palenight'
-        }
+        tool: ['console', 'elements', 'info', 'resources', 'sources', 'snippets'],
+        defaults: {theme: 'Dracula', displaySize:40, transparency:0.9}
     });
+    /* eslint-enable key-spacing, array-bracket-spacing, array-bracket-newline */
     let console = eruda.get('console');
-    let resources = eruda.get('resources');
-    let elements = eruda.get('elements');
-    let sources = eruda.get('sources');
-    let snippets = eruda.get('snippets');
-    console.config.set('asyncRender', true);
-    console.config.set('jsExecution', true);
-    console.config.set('catchGlobalErr', true);
-    console.config.set('overrideConsole', true);
     console.config.set('displayExtraInfo', true);
-    console.config.set('displayUnenumerable', true);
-    console.config.set('displayGetterVal', true);
-    console.config.set('lazyEvaluation', true);
     console.config.set('displayIfErr', true);
+    let resources = eruda.get('resources');
     resources.config.set('hideErudaSetting', false);
-    elements.config.set('overrideEventTarget', true);
-    sources.config.set('indentSize', '4');
-    sources.config.set('formatCode', false);
-    sources.config.set('showLineNum', true);
-    snippets.add('hello', function () {
-    	console.log('Hello World!');
-    }, 'Display hello on console');
-
-    eruda.position({x: 20, y: 20});
-    eruda.show();
-    eruda.add(erudaCode);
-    eruda.add(erudaDom);
-    console.log('eruda is a console for %s.', 'mobile browsers');
-    console.table([
-        {test: 1}, {test: 2}, {test2: 3}
-    ], 'test');
-    console.error(new Error('eruda'));
+    let snippets = eruda.get('snippets');
+    snippets.add('enhuge', function () {
+        eruda.scale(2);
+    }, 'Make eruda big');
+    snippets.add('debiggerize', function () {
+        eruda.scale(1);
+    }, 'Make eruda original size');
+    snippets.add('Shut down eruda', function () {
+        eruda.destroy();
+    }, 'Close eruda');
+    snippets.add('Reset icon position', function () {
+        eruda.position({x: 50, y: 50});
+    }, 'Yep');
+    let info = eruda.get('info');
+    info.add('viewportWidth', window.innerWidth);
+    info.add('viewportHeight', window.innerHeight);
+    eruda.show("console");
+    var winWidth = window.innerWidth;
+    if (winWidth > 700) {
+        eruda.scale(2);
+    }
+    eruda.position({x: 50, y: 50});
+    console.log("width", window.innerWidth);
 })();
