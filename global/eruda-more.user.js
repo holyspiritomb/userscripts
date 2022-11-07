@@ -4,12 +4,12 @@
 // @match       *://*/*
 // @grant       none
 // @grant       property:settings
-// @version     1.1
+// @version     1.2
 // @author      holyspiritomb
 // @require     https://cdn.jsdelivr.net/npm/eruda@2.5.0
 // @connect     cdn.jsdelivr.net
 // @connect     https://cdn.jsdelivr.net
-// @description Eruda persistent mobile devtools, for troubleshooting on mobile. Targeting mobile Vivaldi via Adguard for Android. Inspired by the Andure userscript by 
+// @description Eruda persistent mobile devtools, for troubleshooting on mobile. Targeting mobile Vivaldi via Adguard for Android. 
 // @noframes
 // ==/UserScript==
 /* globals eruda */
