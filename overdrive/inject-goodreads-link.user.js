@@ -5,6 +5,7 @@
 // @version     1.0
 // @description Injects a link to goodreads under the rating on Overdrive library pages.
 // @homepageURL https://github.com/holyspiritomb/userscripts
+// @downloadURL https://raw.githubusercontent.com/holyspiritomb/userscripts/main/overdrive/inject-goodreads-link.user.js
 // @license     MIT
 // @match       https://*.overdrive.com/*/content/media/*
 // @run-at      document-end
