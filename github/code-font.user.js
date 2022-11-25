@@ -2,7 +2,7 @@
 // @name          Github Code Font: Victor Mono
 // @namespace     https://github.com/holyspiritomb
 // @author        spiritomb
-// @version       1.0.1
+// @version       1.0.2
 // @description   Makes Github's code font Victor Mono. Targets mobile Chrome-based browsers via Adguard for Android.
 // @license       MIT
 // @match         https://github.com/*
@@ -60,6 +60,7 @@
                 font-family: "Victor Mono" !important;
             }
             .pl-c, .pl-c span{
+                font-family: "Victor Mono" !important;
                 font-style: italic !important;
             }
     `;
