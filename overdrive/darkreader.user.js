@@ -2,8 +2,10 @@
 // @name        DarkReader: Tokyo Night Overdrive
 // @namespace   https://github.com/holyspiritomb
 // @author      holyspiritomb
-// @version     1.0
+// @version     1.1
 // @description Apply DarkReader Tokyo Night theme to Overdrive sites.
+// @homepageURL https://github.com/holyspiritomb/userscripts/blob/main/overdrive/darkreader.user.js
+// @downloadURL https://raw.githubusercontent.com/holyspiritomb/userscripts/main/overdrive/darkreader.user.js
 // @license     MIT
 // @match       https://*.overdrive.com/*
 // @run-at      document-start
