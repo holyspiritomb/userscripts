@@ -2,7 +2,7 @@
 // @name        Overdrive: Goodreads link
 // @namespace   https://github.com/holyspiritomb
 // @author      holyspiritomb
-// @version     1.4
+// @version     1.5
 // @description Injects links to goodreads under the book format on Overdrive library pages.
 // @homepageURL https://github.com/holyspiritomb/userscripts
 // @downloadURL https://raw.githubusercontent.com/holyspiritomb/userscripts/main/overdrive/inject-goodreads-link.user.js
@@ -13,6 +13,9 @@
 // @grant       none
 // ==/UserScript==
 
+// prototype url for broader search
+// https://www.goodreads.com/search?utf8=%E2%9C%93&q={author}+{title}&search_type=books&search%5Bfield%5D=on
+
 function getIsbn(el) {
     let isbnRegex = /[0-9]{11,13}/;
     let isbn = document.querySelector(el).textContent.match(isbnRegex);
@@ -21,24 +24,30 @@ function getIsbn(el) {
     return isbn;
 }
 
-var rawtitle = document.querySelector("meta[property='og:title']").content;
-let title = encodeURI(rawtitle);
-var isbn = getIsbn('#title-format-details');
+var rawtitle;
+rawtitle = document.querySelector("meta[property='og:title']").content;
+var title;
+title = encodeURI(rawtitle);
+var isbn;
+isbn = getIsbn('#title-format-details');
 
-function addGrLink(el, term) {
+function addGrLink(el, metaterm, searchTerm) {
     let link = document.createElement('a');
+    link.id = `gr-${metaterm}`;
     link.style.display = "block";
     link.style.fontWeight = "normal";
     link.style.textAlign = "center";
     link.style.textDecoration = "underline";
     link.style.marginBottom = "25px";
-    link.href = `https://www.goodreads.com/book/isbn?isbn=${term}`;
-    link.innerHTML = `Query ${term} on Goodreads`;
+    link.href = `https://www.goodreads.com/book/${metaterm}?${metaterm}=${searchTerm}`;
+    link.innerHTML = `Query book ${metaterm} on Goodreads`;
     el.after(link);
 }
 
 
 $('div.TitleDetailsHeading > span.TitleDetailsHeading-formatBadge').each(function () {
-    addGrLink(this, isbn);
-    addGrLink(this, title);
+    addGrLink(this, "title", title);
+    if (isbn != null) {
+        addGrLink("#gr-title", "isbn", isbn);
+    }
 });
