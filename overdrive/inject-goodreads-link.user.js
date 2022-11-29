@@ -2,8 +2,8 @@
 // @name        Overdrive: Goodreads link
 // @namespace   https://github.com/holyspiritomb
 // @author      holyspiritomb
-// @version     1.3
-// @description Injects a link to goodreads under the book format on Overdrive library pages.
+// @version     1.4
+// @description Injects links to goodreads under the book format on Overdrive library pages.
 // @homepageURL https://github.com/holyspiritomb/userscripts
 // @downloadURL https://raw.githubusercontent.com/holyspiritomb/userscripts/main/overdrive/inject-goodreads-link.user.js
 // @license     MIT
@@ -21,21 +21,24 @@ function getIsbn(el) {
     return isbn;
 }
 
+var rawtitle = document.querySelector("meta[property='og:title']").content;
+let title = encodeURI(rawtitle);
 var isbn = getIsbn('#title-format-details');
 
-function addGrLink(el) {
+function addGrLink(el, term) {
     let link = document.createElement('a');
     link.style.display = "block";
     link.style.fontWeight = "normal";
     link.style.textAlign = "center";
     link.style.textDecoration = "underline";
-    link.style.marginBottom = "50px";
-    link.href = `https://www.goodreads.com/book/isbn?isbn=${isbn}`;
-    link.innerHTML = "Query on Goodreads";
+    link.style.marginBottom = "25px";
+    link.href = `https://www.goodreads.com/book/isbn?isbn=${term}`;
+    link.innerHTML = `Query ${term} on Goodreads`;
     el.after(link);
 }
 
 
 $('div.TitleDetailsHeading > span.TitleDetailsHeading-formatBadge').each(function () {
-    addGrLink(this);
+    addGrLink(this, isbn);
+    addGrLink(this, title);
 });
