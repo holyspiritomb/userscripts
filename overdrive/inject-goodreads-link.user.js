@@ -2,7 +2,7 @@
 // @name        Overdrive: Goodreads link
 // @namespace   https://github.com/holyspiritomb
 // @author      holyspiritomb
-// @version     1.7
+// @version     1.8
 // @description Injects links to goodreads under the book format on Overdrive library pages.
 // @homepageURL https://github.com/holyspiritomb/userscripts
 // @downloadURL https://raw.githubusercontent.com/holyspiritomb/userscripts/main/overdrive/inject-goodreads-link.user.js
@@ -38,17 +38,20 @@ function addGrLink(el, metaterm, searchTerm) {
     link.style.fontWeight = "normal";
     link.style.textAlign = "center";
     link.style.textDecoration = "underline";
-    link.style.marginBottom = "25px";
     link.href = `https://www.goodreads.com/book/${metaterm}?${metaterm}=${searchTerm}`;
-    link.innerHTML = `Query book ${metaterm} on Goodreads`;
+    link.innerHTML = `Query ${metaterm} on Goodreads`;
     el.after(link);
 }
 
 
 $('div.TitleDetailsHeading > span.TitleDetailsHeading-formatBadge').each(function () {
     let anchorElem = this;
-    addGrLink(anchorElem, "title", title);
     if (isbn != null) {
         addGrLink(anchorElem, "isbn", isbn);
     }
+    addGrLink(anchorElem, "title", title);
+});
+
+$('div.TitleDetailsHeading').each(function () {
+    this.style.marginBottom = "25px";
 });
