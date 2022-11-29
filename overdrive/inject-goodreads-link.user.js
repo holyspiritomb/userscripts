@@ -2,8 +2,8 @@
 // @name        Overdrive: Goodreads link
 // @namespace   https://github.com/holyspiritomb
 // @author      holyspiritomb
-// @version     1.1
-// @description Injects a link to goodreads under the rating on Overdrive library pages.
+// @version     1.2
+// @description Injects a link to goodreads under the book format on Overdrive library pages.
 // @homepageURL https://github.com/holyspiritomb/userscripts
 // @downloadURL https://raw.githubusercontent.com/holyspiritomb/userscripts/main/overdrive/inject-goodreads-link.user.js
 // @license     MIT
@@ -35,6 +35,6 @@ function addGrLink(el) {
 }
 
 
-$('div.TitleDetailsHeading').each(function () {
+$('div.TitleDetailsHeading > span.TitleDetailsHeading-formatBadge').each(function () {
     addGrLink(this);
 });
