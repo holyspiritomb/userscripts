@@ -2,7 +2,7 @@
 // @name        Overdrive: Goodreads link
 // @namespace   https://github.com/holyspiritomb
 // @author      holyspiritomb
-// @version     1.9
+// @version     1.10
 // @description Injects links to goodreads under the book format on Overdrive library pages.
 // @homepageURL https://github.com/holyspiritomb/userscripts
 // @downloadURL https://raw.githubusercontent.com/holyspiritomb/userscripts/main/overdrive/inject-goodreads-link.user.js
@@ -59,5 +59,5 @@ $('div.TitleDetailsHeading').each(function () {
 $('div.TitleDetailsHeading > div.TitleDetailsHeading-creator > a.TitleDetailsHeading-creatorLink').each(function () {
     let auth = this.textContent;
     let author = encodeURI(auth);
-    this.href = `https://www.goodreads.com/book/author?author=${author}`;
+    this.href = `https://www.goodreads.com/search?utf8=%E2%9C%93&q=${author}&search_type=books&search%5Bfield%5D=on`;
 });
