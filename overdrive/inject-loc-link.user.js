@@ -14,20 +14,21 @@
 // ==/UserScript==
 // https://id.loc.gov/search/?q=${searchquery}&q=cs%3Ahttp%3A%2F%2Fid.loc.gov%2Fresources%2Fworks
 
+var niceauthor;
 var author;
 var title;
 var format;
 
 function getAuthors(el) {
     let authRegex = /Author/;
-    author = document.querySelector(el).textContent.match(authRegex);
-    isbn = encodeURI(author);
-    console.log(isbn);
-    return isbn;
+    niceauthor = document.querySelector(el).textContent.match(authRegex);
+    author = encodeURI(niceauthor);
+    console.log(niceauthor);
+    return author;
 }
 
 function getFormat() {
-    bookFormat = document.querySelectorAll('div.TitleDetailsHeading > span.TitleDetailsHeading-formatBadge > span.u-allCaps')[0].textContent;
+    let bookFormat = document.querySelectorAll('div.TitleDetailsHeading > span.TitleDetailsHeading-formatBadge > span.u-allCaps')[0].textContent;
     return bookFormat;
 }
 
@@ -52,8 +53,8 @@ function addGrLink(el) {
     link.style.fontWeight = "normal";
     link.style.textAlign = "center";
     link.style.textDecoration = "underline";
-    link.href = `https://id.loc.gov/search/?q=${searchquery}&q=cs%3Ahttp%3A%2F%2Fid.loc.gov%2Fresources%2Fworks`;
-    link.innerHTML = "View on Goodreads";
+    link.href = `https://id.loc.gov/search/?q=${searchQuery}&q=cs%3Ahttp%3A%2F%2Fid.loc.gov%2Fresources%2Fworks`;
+    link.innerHTML = "Query LOC";
     el.after(link);
 }
 
