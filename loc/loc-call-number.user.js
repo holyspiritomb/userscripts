@@ -36,6 +36,7 @@ $("div.bf-display-classification > dd").each(
 
 if (lccNumber != null) {
     $("div#callnumber > span").on('click', function(){
+        lccNumber.replace("  ", "");
         GM_setClipboard(lccNumber);
         this.innerHTML = "";
         this.append('\u2713');
