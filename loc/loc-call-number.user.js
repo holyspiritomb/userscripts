@@ -2,7 +2,7 @@
 // @name        LOC call number copy
 // @namespace   https://github.com/holyspiritomb
 // @author      holyspiritomb
-// @version     0.0.4
+// @version     0.0.5
 // @description Copy the call number 
 // @homepageURL https://github.com/holyspiritomb/userscripts
 // @license     MIT
@@ -28,8 +28,7 @@ $("div.bf-display-classification > dd").each(
     function() {
         let catalogType = this.childNodes[0].innerText;
         if (catalogType == "LCC: ") {
-            lccNumber = this.innerText;
-            lccNumber.replace("LCC: ","").replace(" (Assigner: dlc)","");
+            lccNumber = this.innerText.replace("LCC: ","").replace(" (Assigner: dlc)","");
             $("h1").after(`<div id="callnumber">${lccNumber} <span></span></div>`);
             $("div#callnumber > span").append('\u{1F4CB}');
         }
