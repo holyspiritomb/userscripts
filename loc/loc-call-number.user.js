@@ -2,7 +2,7 @@
 // @name        LOC call number copy
 // @namespace   https://github.com/holyspiritomb
 // @author      holyspiritomb
-// @version     0.0.2
+// @version     0.0.3
 // @description Copy the call number 
 // @homepageURL https://github.com/holyspiritomb/userscripts
 // @license     MIT
