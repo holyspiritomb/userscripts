@@ -2,8 +2,8 @@
 // @name        LOC call number copy
 // @namespace   https://github.com/holyspiritomb
 // @author      holyspiritomb
-// @version     0.0.1
-// @description Copy the coad
+// @version     0.0.2
+// @description Copy the call number 
 // @homepageURL https://github.com/holyspiritomb/userscripts
 // @license     MIT
 // @match       https://id.loc.gov/resources/works/*
