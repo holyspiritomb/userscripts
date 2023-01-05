@@ -29,7 +29,6 @@ $("div.bf-display-classification > dd").each(
         let catalogType = this.childNodes[0].innerText;
         if (catalogType == "LCC: ") {
             lccNumber = this.childNodes[1].wholeText;
-            lccNumber.replace("  ", "");
             $("h1").after(`<div id="callnumber">${lccNumber} <span></span></div>`);
             $("div#callnumber > span").append('\u{1F4CB}');
         }
