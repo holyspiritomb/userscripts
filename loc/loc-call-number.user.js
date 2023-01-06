@@ -2,7 +2,7 @@
 // @name        LOC call number copy
 // @namespace   https://github.com/holyspiritomb
 // @author      holyspiritomb
-// @version     0.0.5
+// @version     0.0.6
 // @description Copy the call number 
 // @homepageURL https://github.com/holyspiritomb/userscripts
 // @license     MIT
@@ -35,8 +35,8 @@ $("div.bf-display-classification > dd").each(
 });
 
 if (lccNumber != null) {
+    lccNumber.replace("  ","");
     $("div#callnumber > span").on('click', function(){
-        lccNumber.replace("  ","");
         GM_setClipboard(lccNumber);
         this.innerHTML = "";
         this.append('\u2713');
