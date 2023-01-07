@@ -47,18 +47,16 @@ function getQuery() {
 
 var searchQuery = getQuery();
 
-function addGrLink(el) {
+function locLink() {
     let link = document.createElement('a');
     link.style.display = "block";
     link.style.fontWeight = "normal";
     link.style.textAlign = "center";
     link.style.textDecoration = "underline";
     link.href = `https://id.loc.gov/search/?q=${searchQuery}&q=cs%3Ahttp%3A%2F%2Fid.loc.gov%2Fresources%2Fworks`;
-    link.innerHTML = "Query LOC";
-    el.after(link);
+    link.innerText = "Query LOC";
+    return link;
 }
 
-
-$('.js-starRatingsContainer').each(function () {
-    addGrLink(this);
-});
+var injectedEl = locLink();
+$('.js-starRatingsContainer').after(injectedEl);
