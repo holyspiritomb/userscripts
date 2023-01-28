@@ -2,7 +2,7 @@
 // @name        ASIN to Goodreads Pages
 // @namespace   https://github.com/holyspiritomb
 // @author      spiritomb
-// @version     1.0.2
+// @version     1.0.3
 // @description Adds mobi-asin to individual book pages and copies it to the clipboard when clicked. Clicking "mobi-asin:" will copy the asin to the clipboard with "mobi-asin:" as a prefix for easy pasting into Calibre ebook library software. Works on book pages that have a button to buy from the Kindle Store or are listed under the book details as a Kindle edition. Works with new layout! Inspired by CH Amazon ASIN Adder by clickhappier: https://greasyfork.org/en/scripts/6862-ch-amazon-asin-adder
 // @match       https://www.goodreads.com/book/show/*
 // @run-at      document-end
@@ -95,34 +95,27 @@ if (  $("link[rel = 'stylesheet'][href *= '_next']") ) {
         legacyBookId = JSON.stringify(legacyBookId);
         legacyBookId = legacyBookId.split("-")[0];
         legacyBookId = legacyBookId.replace("\"", "");
-        let fancyBookId = apollo.ROOT_QUERY[`getBookByLegacyId({"legacyId":"${legacyBookId}"})`].__ref;
         console.log(Object.keys(apollo.ROOT_QUERY));
-        var details = apollo[`${fancyBookId}`].details;
-        let bookFormat = details.format;
-        if (bookFormat == "Kindle Edition") {
-            asin = details.asin;
+        for (const i of Object.keys(apollo)){
+            work = i.match(/^Work.+/i);
+            if (work != null){
+                break;
+            }
+        }
+        work = work[0];
+        let editionsURL = apollo[`${work}`].editions["webUrl"];
+        let bestBookRef = apollo[`${work}`].bestBook["__ref"];
+        //bestBookRef = JSON.stringify(bestBookRef);
+        let bestBookPrimary = apollo[`${bestBookRef}`];
+        let bestBookLinks = bestBookPrimary["links({})"];
+        let bestBookType = bestBookLinks.primaryAffiliateLink.__typename;
+        if (bestBookType == "KindleLink"){
+            var amazURL = bestBookLinks.primaryAffiliateLink.url;
+            asin = matchASIN(amazURL);
         } else {
-            for (const i of Object.keys(apollo)){
-                work = i.match(/^Work.+/i);
-                if (work != null){
-                    break;
-                }
-            }
-            work = work[0];
-            let editionsURL = apollo[`${work}`].editions["webUrl"];
-            let bestBookRef = apollo[`${work}`].bestBook["__ref"];
-            //bestBookRef = JSON.stringify(bestBookRef);
-            let bestBookPrimary = apollo[`${bestBookRef}`];
-            let bestBookLinks = bestBookPrimary["links({})"];
-            let bestBookType = bestBookLinks.primaryAffiliateLink.__typename;
-            if (bestBookType == "KindleLink"){
-                var amazURL = bestBookLinks.primaryAffiliateLink.url;
-                asin = matchASIN(amazURL);
-            } else {
-                console.log("The best book according to the data isn't a Kindle link. Try viewing another edition's page.");
-                console.log(editionsURL);
-                asin = null;
-            }
+            console.log("The best book according to the data isn't a Kindle link. Try viewing another edition's page.");
+            console.log(editionsURL);
+            asin = null;
         }
         $("h1[data-testid='bookTitle']").each(function() {
             addAsin(this, asin);
