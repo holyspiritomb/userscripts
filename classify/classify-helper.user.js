@@ -11,4 +11,15 @@
 
 
 let owilink = $('a[href^="http://classify.oclc.org/classify2/ClassifyDemo?owi="]');
+let owi = owilink.href.split('=')[1];
 
+
+
+let lccrow = $('a[href*="https://classweb.org/min"]').closest("tr");
+let lccelem = lccrow.children[1];
+
+var fastTags;
+
+$('a[href^="/classify2/ClassifyDemo?search-subhead-txt="]').each(function() {
+    //append each to fastTags
+});
