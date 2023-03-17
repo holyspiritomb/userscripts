@@ -36,6 +36,7 @@ $('a[href^="/classify2/ClassifyDemo?search-subhead-txt="]').each(function() {
 });
 
 console.log(fastTags);
+let fastTagsStr = fastTags.toString();
 
 $('div#display-Summary').after(`
 <div id="LOC"><b>LCC</b>: ${lcc}</div>
@@ -52,7 +53,7 @@ $("div#OWI>span").on('click', function(){
     this.append(' \u2713');
 });
 $("div#fast_tags").on('click', function(){
-    GM_setClipboard(fastTags);
+    GM_setClipboard(fastTagsStr);
     this.append(' \u2713');
 });
 
