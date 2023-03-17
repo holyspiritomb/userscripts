@@ -24,11 +24,14 @@ console.debug(lccelem);
 let lcc = lccelem.innerText;
 console.debug(lcc);
 
-var fastTags;
+const fastTags = [];
 
 $('a[href^="/classify2/ClassifyDemo?search-subhead-txt="]').each(function() {
     //append each to fastTags
     let fastTag = this.innerText;
-    fastTag = fastTag.replace(",", ";");
+    fastTag = fastTag.replace(/,\s*/g, "--");
+    fastTags.push(fastTag);
     console.debug(fastTag);
 });
+
+console.log(fastTags);
