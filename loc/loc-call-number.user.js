@@ -35,7 +35,7 @@ $("div.bf-display-classification > dd").each(
 });
 
 if (lccNumber != null) {
-    lccNumber.replace("  ","");
+    lccNumber.replace("  ", "");
     $("div#callnumber > span").on('click', function(){
         GM_setClipboard(lccNumber);
         this.innerHTML = "";

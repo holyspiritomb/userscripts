@@ -6,23 +6,24 @@
 // @version     1.0
 // @author      holyspiritomb
 // @require     https://code.jquery.com/jquery-latest.min.js
-// @description Make using the web demo easier for copying data.
+// @description Make using the web demo easier for copying data into Calibre.
 // ==/UserScript==
 
 
 let owilink = $('a[href^="http://classify.oclc.org/classify2/ClassifyDemo?owi="]');
-console.log(owilink[0]);
+//console.log(owilink[0]);
 let owi = owilink[0].href.split('=')[1];
-console.debug(owi);
+let owiId = `oclc-owi:${owi}`;
+//console.debug(owi);
 
 
 
 let lccrow = $('a[href*="https://classweb.org/min"]').closest("tr");
-console.debug(lccrow);
+//console.debug(lccrow);
 let lccelem = lccrow[0].children[1];
-console.debug(lccelem);
+//console.debug(lccelem);
 let lcc = lccelem.innerText;
-console.debug(lcc);
+//console.debug(lcc);
 
 const fastTags = [];
 
@@ -31,7 +32,32 @@ $('a[href^="/classify2/ClassifyDemo?search-subhead-txt="]').each(function() {
     let fastTag = this.innerText;
     fastTag = fastTag.replace(/,\s*/g, "--");
     fastTags.push(fastTag);
-    console.debug(fastTag);
+    //console.debug(fastTag);
 });
 
 console.log(fastTags);
+
+$('div#display-Summary').after(`
+<div id="LOC"><b>LCC</b>: ${lcc}</div>
+<div id="OWI"><b id="oclcOwi">OWI</b>: <span>${owi}</span></div>
+<div id="fast_tags"><b>FAST</b>: ${fastTags}</div>
+`);
+
+$("div#LOC").on('click', function(){
+    GM_setClipboard(lcc);
+    this.append(' \u2713');
+});
+$("div#OWI>span").on('click', function(){
+    GM_setClipboard(owi);
+    this.append(' \u2713');
+});
+$("div#fast_tags").on('click', function(){
+    GM_setClipboard(fastTags);
+    this.append(' \u2713');
+});
+
+$('b#oclcOwi').on('click', function(){
+    GM_setClipboard(owiId);
+    alert(`copied ${owiId} to clipboard`);
+});
+
