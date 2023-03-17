@@ -11,15 +11,24 @@
 
 
 let owilink = $('a[href^="http://classify.oclc.org/classify2/ClassifyDemo?owi="]');
-let owi = owilink.href.split('=')[1];
+console.log(owilink[0]);
+let owi = owilink[0].href.split('=')[1];
+console.debug(owi);
 
 
 
 let lccrow = $('a[href*="https://classweb.org/min"]').closest("tr");
-let lccelem = lccrow.children[1];
+console.debug(lccrow);
+let lccelem = lccrow[0].children[1];
+console.debug(lccelem);
+let lcc = lccelem.innerText;
+console.debug(lcc);
 
 var fastTags;
 
 $('a[href^="/classify2/ClassifyDemo?search-subhead-txt="]').each(function() {
     //append each to fastTags
+    let fastTag = this.innerText;
+    fastTag = fastTag.re(",", ";");
+    console.debug(fastTag);
 });
