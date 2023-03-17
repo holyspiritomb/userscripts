@@ -3,7 +3,7 @@
 // @namespace   https://github.com/holyspiritomb
 // @match       *://classify.oclc.org/classify2/ClassifyDemo*
 // @grant       GM_setClipboard
-// @version     1.0
+// @version     1.1
 // @author      holyspiritomb
 // @require     https://code.jquery.com/jquery-latest.min.js
 // @description Make using the web demo easier for copying data into Calibre.
