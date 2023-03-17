@@ -29,6 +29,6 @@ var fastTags;
 $('a[href^="/classify2/ClassifyDemo?search-subhead-txt="]').each(function() {
     //append each to fastTags
     let fastTag = this.innerText;
-    fastTag = fastTag.re(",", ";");
+    fastTag = fastTag.replace(",", ";");
     console.debug(fastTag);
 });
