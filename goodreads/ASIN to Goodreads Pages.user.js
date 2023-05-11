@@ -2,8 +2,8 @@
 // @name        ASIN to Goodreads Pages
 // @namespace   https://github.com/holyspiritomb
 // @author      spiritomb
-// @version     2.0.1
-// @description Adds mobi-asin to individual book pages and copies it to the clipboard when clicked. Clicking "mobi-asin:" will copy the asin to the clipboard with "mobi-asin:" as a prefix for easy pasting into Calibre ebook library software. Works on book pages that have a button to buy from the Kindle Store or are listed under the book details as a Kindle edition.Inspired by CH Amazon ASIN Adder by clickhappier: https://greasyfork.org/en/scripts/6862-ch-amazon-asin-adder
+// @version     2.0.2
+// @description Adds mobi-asin to individual book pages and copies it to the clipboard when clicked. Clicking "mobi-asin:" will copy the asin to the clipboard with "mobi-asin:" as a prefix.
 // @match       https://www.goodreads.com/book/show/*
 // @run-at      document-end
 // @grant       GM_setClipboard
@@ -11,6 +11,8 @@
 // @updateURL   https://raw.githubusercontent.com/holyspiritomb/userscripts/main/goodreads/ASIN%20to%20Goodreads%20Pages.user.js
 // @icon        https://www.google.com/s2/favicons?domain=goodreads.com
 // ==/UserScript==
+
+// Inspired by CH Amazon ASIN Adder by clickhappier: https://greasyfork.org/en/scripts/6862-ch-amazon-asin-adder
 
 function matchASIN(href) { // adapted from getASIN function in clickhappier's userscript
     var asinMatch;
