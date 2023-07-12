@@ -2,7 +2,7 @@
 // @name          Github UI Font: Inter UI
 // @namespace     https://github.com/holyspiritomb
 // @author        spiritomb
-// @version       1.0.0
+// @version       1.0.1
 // @description	  Use the Inter font for all the non-code text on Github. Targets mobile Vivaldi via Adguard for Android.
 // @license       MIT
 // @match         https://github.com/*
@@ -74,7 +74,7 @@
 		  src: url(${interBoldIt}) format("woff2");
 		}
 
-		body { font-family: 'Inter', 'Lato', sans-serif !important; }`;
+		body, .markdown-body { font-family: 'Inter', 'Lato', sans-serif !important; }`;
     if (typeof GM_addStyle != "undefined") {
         GM_addStyle(css);
     } else {
