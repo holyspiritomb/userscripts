@@ -2,7 +2,7 @@
 // @name        Overdrive book link to Libby
 // @namespace   https://github.com/holyspiritomb
 // @author      spiritomb
-// @version     0.0.1
+// @version     0.0.2
 // @description Changes Overdrive book search result links to Libby links.
 // @match       https://*.overdrive.com/*
 // @run-at      document-end
@@ -23,7 +23,9 @@ function odToLibbyMedia(b) {
 }
 
 setTimeout( function () {
-    $('a[href*="overdrive.com/media"]').each(function () {
+    $('h3.title-name a[href*="/media"]').each(function () {
+        alert(this.href);
+        alert(window.location);
         this.href = odToLibbyMedia(this);
         console.log(this.href);
     });
