@@ -2,7 +2,7 @@
 // @name        Overdrive book link to Libby
 // @namespace   https://github.com/holyspiritomb
 // @author      spiritomb
-// @version     0.0.2
+// @version     0.0.3
 // @description Changes Overdrive book search result links to Libby links.
 // @match       https://*.overdrive.com/*
 // @run-at      document-end
@@ -14,7 +14,7 @@
 // ==/UserScript==
 // https://libraryweb.overdrive.com/media/9141385
 function odToLibbyMedia(b) {
-    let url = b.href;
+    let url = b;
     let lUrl = url.replace("://", "://libbyapp.com/library/").replace(".overdrive.com/media", "");
     let book = url.slice(-7);
     let urlPrefix = lUrl.slice(0,-8);
@@ -24,9 +24,9 @@ function odToLibbyMedia(b) {
 
 setTimeout( function () {
     $('h3.title-name a[href*="/media"]').each(function () {
+        fullUrl = this.href;
+        alert(fullUrl);
+        this.href = odToLibbyMedia(fullUrl);
         alert(this.href);
-        alert(window.location);
-        this.href = odToLibbyMedia(this);
-        console.log(this.href);
     });
 }, 5000);
