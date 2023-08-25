@@ -6,7 +6,7 @@
 // @grant       property:settings
 // @version     1.2
 // @author      holyspiritomb
-// @require     https://cdn.jsdelivr.net/npm/eruda@2.5.0
+// @require     https://cdn.jsdelivr.net/npm/eruda
 // @connect     cdn.jsdelivr.net
 // @connect     https://cdn.jsdelivr.net
 // @homepageURL https://github.com/holyspiritomb/userscripts
