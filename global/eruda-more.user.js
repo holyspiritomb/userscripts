@@ -4,7 +4,7 @@
 // @match       *://*/*
 // @grant       none
 // @grant       property:settings
-// @version     1.2
+// @version     1.3
 // @author      holyspiritomb
 // @require     https://cdn.jsdelivr.net/npm/eruda
 // @connect     cdn.jsdelivr.net
