@@ -29,6 +29,18 @@ function findBookInfo(obj){
     return keys;
 }
 
+function findBookAuthors(obj){
+    let keys = [];
+    for (let key in obj) {
+        if (key.startsWith("Contributor:")) {
+            if (obj[key]["name"]){
+                keys.push(key);
+            }
+        }
+    }
+    return keys;
+}
+
 function inList(itemToTest, someList) {
     let itemIndex = someList.indexOf(itemToTest);
     if (itemIndex == -1) {
@@ -47,27 +59,31 @@ function addWarning(elem, reason) {
 
 if (valueArrayList) {
     //console.log(typeOf(valueArrayList));
-	//console.log(valueArrayList);
-	//console.warn(typeof(valueArrayList));
-	//let avoidPublishers = Array.from(GM_getValue("avoidThesePublishers"));
-	let avoidPublishers = [];
-	avoidPublishers = GM_getValue("avoidThesePublishers");
+    //console.log(valueArrayList);
+    //console.warn(typeof(valueArrayList));
+    //let avoidPublishers = Array.from(GM_getValue("avoidThesePublishers"));
+    let avoidPublishers = [];
+    avoidPublishers = GM_getValue("avoidThesePublishers");
     let avoidAuthors = [];
-	avoidAuthors = GM_getValue("avoidTheseAuthors");
-	if ( !avoidPublishers || !avoidAuthors ){
-		GM_setValue("avoidThesePublishers", ["Publisher1"]);
-		GM_setValue("avoidTheseAuthors", ["Author1"]);
-	} else {
-		console.log(avoidAuthors);
-		console.log(avoidPublishers);
-	}
+    avoidAuthors = GM_getValue("avoidTheseAuthors");
+    if ( !avoidPublishers || !avoidAuthors ){
+        GM_setValue("avoidThesePublishers", ["Publisher1"]);
+        GM_setValue("avoidTheseAuthors", ["Author1"]);
+    } else {
+        console.log(avoidAuthors);
+        console.log(avoidPublishers);
+    }
     setTimeout( function () {
         const jsonstring = document.querySelector("script#__NEXT_DATA__").text;
         const jsonobj = JSON.parse(jsonstring);
+        const apolloObj = jsonobj.props.pageProps.apolloState;
         const bookId = findBookInfo(jsonobj.props.pageProps.apolloState);
+        const bookAuthorId = findBookAuthors(apolloObj);
+        console.log(bookAuthorId);
+        console.log(typeof bookAuthorId);
         const bookInfo = jsonobj.props.pageProps.apolloState[bookId];
         const publisher = bookInfo["details"]["publisher"];
-        let titleNode = document.querySelector(" [data-testid='bookTitle']");
+        let titleNode = document.querySelector("[data-testid='bookTitle']");
         console.log(publisher);
         if ( inList(publisher, avoidPublishers) ){
             console.log(`${publisher} is in avoid list`);
@@ -78,23 +94,23 @@ if (valueArrayList) {
         let authorNodes = document.querySelectorAll("span.ContributorLink__name");
         authorNodes.forEach((element) => {
             let authorName = element.innerText;
-            console.log(`checking avoid list for ${authorName}`)
+            console.log(`checking avoid list for ${authorName}`);
             if ( inList(authorName, avoidAuthors) ){
                 console.log(`${authorName} is in avoid list`);
                 addWarning(element, "author");
             } else {
-                console.log(`${authorName} is not in avoid list`)
+                console.log(`${authorName} is not in avoid list`);
             }
         });
-		let otherAuthorNodes = document.querySelectorAll("div.BookCard__authorName");
+        let otherAuthorNodes = document.querySelectorAll("div.BookCard__authorName");
         otherAuthorNodes.forEach((element) => {
             let authorName = element.innerText;
-            console.log(`checking avoid list for ${authorName}`)
+            console.log(`checking avoid list for ${authorName}`);
             if ( inList(authorName, avoidAuthors) ){
                 console.log(`${authorName} is in avoid list`);
                 addWarning(element, "author");
             } else {
-                console.log(`${authorName} is not in avoid list`)
+                console.log(`${authorName} is not in avoid list`);
             }
         });
     }, 5000);
