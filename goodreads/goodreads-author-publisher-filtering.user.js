@@ -54,6 +54,8 @@ function addWarning(elem, reason) {
     let warningEl = document.createElement("span");
     warningEl.title = `${reason} is in avoid list`;
     warningEl.innerText = '\u26a0\ufe0f'; // the warning sign emoji
+    warningEl.style.marginLeft = "5px";
+    warningEl.style.marginRight = "5px";
     elem.insertAdjacentElement("afterend", warningEl);
 }
 
