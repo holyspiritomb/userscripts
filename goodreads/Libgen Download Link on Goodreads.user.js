@@ -2,31 +2,28 @@
 // @name        Libgen Download Link on Goodreads
 // @namespace   https://github.com/holyspiritomb
 // @author      holyspiritomb
-// @version     1.2
-// @description Based on the firefox extension by Saeed Moqadam https://addons.mozilla.org/en-US/firefox/addon/libgen-download-link/ and tested with Adguard for Android (on Bromite, Kiwi Browser, and Android Vivaldi) and with Violentmonkey on Iceraven, desktop Firefox, and desktop Vivaldi.
+// @version     1.3.0
+// @description Based on the firefox extension by Saeed Moqadam https://addons.mozilla.org/en-US/firefox/addon/libgen-download-link/ and tested with Adguard for Android (on Kiwi Browser and Android Vivaldi) and with Violentmonkey on Iceraven, desktop Firefox, and desktop Vivaldi.
 // @homepageURL https://github.com/holyspiritomb/userscripts
+// @updateURL   https://raw.githubusercontent.com/holyspiritomb/userscripts/main/goodreads/Libgen%20Download%20Link%20on%20Goodreads.user.js
 // @license     MIT
 // @match       *://www.goodreads.com/book/show/*
-// @match       *://www.goodreads.com/series/*
 // @run-at      document-end
 // @grant       none
 // @require     https://code.jquery.com/jquery-latest.min.js
 // ==/UserScript==
 
 function createURL(title) {
-    title = title.replaceAll(' ', '+');
-    title = title.replaceAll(/\(.*\)/g, '');
-    title = title.replace('…', '');
     title = title.trim();
-    title = encodeURI(title);
-    let url = `https://libgen.gs/index.php?req=${title}&lg_topic=libgen&open=0&view=simple&res=25&phrase=1&column=def`;
+    let searchTitle = title.replace(/\(.*\)/, "").replace(/^\s+|\s+$/g, '').replace(/[&|,]/g, ' ').replace(/: .*/, '').replace(/[ ]+/, ' ');
+    let searchString = encodeURI(searchTitle);
+    let url = `https://libgen.is/search.php?req=${searchString}&lg_topic=libgen&open=0&view=simple&res=25&phrase=1&column=def`;
     console.log(url);
     return url;
 }
 
 function addDownloadLink(bookElem) {
-    let bookTitle = document.querySelector("meta[property='og:title']").content;
-    console.log(bookTitle);
+    let bookTitle = document.querySelector('h1[data-testid="bookTitle"]').innerText;
     let link = document.createElement('a');
     link.href =  createURL(bookTitle);
     link.style.display = "inline-block";
@@ -45,31 +42,6 @@ function addDownloadLink(bookElem) {
     bookElem.before(link);
 }
 
-// desktop, old
-// mobile single book pages, old
-$('h1.bookTitle>cite[itemprop="name"]').each(function () {
-    addDownloadLink( $(this)[0] );
-    //$('div.pageContent.showBook').style.marginTop = "50px";
-});
-//mobile single book that's in a series, old
-$('h1.bookTitle>span[itemprop="name"]').each(function () {
-    addDownloadLink( $(this)[0] );
-});
-//book author on mobile single book page, old
-$('h2.bookAuthor span[itemprop="author"]>a.authorName').each(function () {
-    let nearestPlace = $(this).closest('span');
-    addDownloadLink(nearestPlace);
-});
-//mobile shelf pages
-// $('li.book>cite[itemprop="name"]').each(function() {
-//     var dlLink = addDownloadLink( $(this)[0] );
-//     $(this).after(dlLink);
-// });
-// series pages
-$('a[href^="/book/show"]>span[itemprop="name"]').each(function () {
-    addDownloadLink( $(this)[0] );
-});
-// new goodreads layout
 setTimeout( function () {
     $('h1#bookTitle').each(function() {
         addDownloadLink( $(this)[0] );
@@ -77,4 +49,4 @@ setTimeout( function () {
     $('h1[data-testid="bookTitle"]').each(function () {
         addDownloadLink( $(this)[0] );
     });
-}, 5000);
+}, 7000);
