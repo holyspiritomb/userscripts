@@ -2,7 +2,7 @@
 // @name        Goodreads Author and Publisher Avoiding
 // @namespace   https://github.com/holyspiritomb
 // @author      spiritomb
-// @version     1.0.0
+// @version     1.0.1
 // @description Warns you with iconography if a book's publisher or author is in your avoid lists.
 // @match       https://www.goodreads.com/book/show/*
 // @run-at      document-end
