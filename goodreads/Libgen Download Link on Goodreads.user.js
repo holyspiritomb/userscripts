@@ -2,7 +2,7 @@
 // @name        Libgen Download Link on Goodreads
 // @namespace   https://github.com/holyspiritomb
 // @author      holyspiritomb
-// @version     1.3.0
+// @version     1.4.0
 // @description Based on the firefox extension by Saeed Moqadam https://addons.mozilla.org/en-US/firefox/addon/libgen-download-link/ and tested with Adguard for Android (on Kiwi Browser and Android Vivaldi) and with Violentmonkey on Iceraven, desktop Firefox, and desktop Vivaldi.
 // @homepageURL https://github.com/holyspiritomb/userscripts
 // @updateURL   https://raw.githubusercontent.com/holyspiritomb/userscripts/main/goodreads/Libgen%20Download%20Link%20on%20Goodreads.user.js
@@ -13,10 +13,10 @@
 // @require     https://code.jquery.com/jquery-latest.min.js
 // ==/UserScript==
 
-function createURL(title) {
+function createURL(title, author) {
     title = title.trim();
     let searchTitle = title.replace(/\(.*\)/, "").replace(/^\s+|\s+$/g, '').replace(/[&|,]/g, ' ').replace(/: .*/, '').replace(/[ ]+/, ' ');
-    let searchString = encodeURI(searchTitle);
+    let searchString = encodeURIComponent(author) + "%20" + encodeURIComponent(searchTitle);
     let url = `https://libgen.is/search.php?req=${searchString}&lg_topic=libgen&open=0&view=simple&res=25&phrase=1&column=def`;
     console.log(url);
     return url;
@@ -24,8 +24,9 @@ function createURL(title) {
 
 function addDownloadLink(bookElem) {
     let bookTitle = document.querySelector('h1[data-testid="bookTitle"]').innerText;
+    let bookAuthor = document.querySelector("span.ContributorLink__name").innerText;
     let link = document.createElement('a');
-    link.href =  createURL(bookTitle);
+    link.href =  createURL(bookTitle, bookAuthor);
     link.style.display = "inline-block";
     link.style.float = "right";
     link.style.height = "25px";
@@ -49,4 +50,4 @@ setTimeout( function () {
     $('h1[data-testid="bookTitle"]').each(function () {
         addDownloadLink( $(this)[0] );
     });
-}, 7000);
+}, 6000);
