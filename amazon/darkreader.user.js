@@ -2,7 +2,7 @@
 // @name        Amazon DarkReader: Tokyo Night
 // @namespace   https://github.com/holyspiritomb
 // @author      holyspiritomb
-// @version     1.1
+// @version     1.2
 // @description Use DarkReader's Tokyo Night colorscheme on Amazon without the DarkReader extension.
 // @homepageURL https://github.com/holyspiritomb/userscripts/blob/main/amazon/darkreader.user.js
 // @downloadURL https://raw.githubusercontent.com/holyspiritomb/userscripts/main/amazon/darkreader.user.js
@@ -28,9 +28,12 @@ DarkReader.enable(
     },
     {
         invert: [""],
-        css: `button[data-mix-operations="selectTag"][class*="_books-tags-based-recommendations"] > span {color: #333 !important;}`,
+        css: `button[data-mix-operations="selectTag"][class*="_books-tags-based-recommendations"] > span {color: #333 !important;}
+        li[role="listitem"].a-carousel-card div.a-cardui[class*="_items-desktop-carousel_asinStyle_recommendationItem"] {background-color: #1a1b26 !important;}
+        a[class*="_items-desktop-carousel_arrowsStyle_common-carousel-arrows-control"] {background-color:#ffaaff !important;}`,
         ignoreInlineStyle: [""],
         ignoreImageAnalysis: [""],
         disableStyleSheetsProxy: false,
     }
 );
+
