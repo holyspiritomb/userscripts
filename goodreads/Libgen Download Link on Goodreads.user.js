@@ -2,7 +2,7 @@
 // @name        Libgen Download Link on Goodreads
 // @namespace   https://github.com/holyspiritomb
 // @author      holyspiritomb
-// @version     1.4.0
+// @version     1.4.1
 // @description Based on the firefox extension by Saeed Moqadam https://addons.mozilla.org/en-US/firefox/addon/libgen-download-link/ and tested with Adguard for Android (on Kiwi Browser and Android Vivaldi) and with Violentmonkey on Iceraven, desktop Firefox, and desktop Vivaldi.
 // @homepageURL https://github.com/holyspiritomb/userscripts
 // @updateURL   https://raw.githubusercontent.com/holyspiritomb/userscripts/main/goodreads/Libgen%20Download%20Link%20on%20Goodreads.user.js
@@ -17,7 +17,7 @@ function createURL(title, author) {
     title = title.trim();
     let searchTitle = title.replace(/\(.*\)/, "").replace(/^\s+|\s+$/g, '').replace(/[&|,]/g, ' ').replace(/: .*/, '').replace(/[ ]+/, ' ');
     let searchString = encodeURIComponent(author) + "%20" + encodeURIComponent(searchTitle);
-    let url = `https://libgen.is/search.php?req=${searchString}&lg_topic=libgen&open=0&view=simple&res=25&phrase=1&column=def`;
+    let url = `https://libgen.gs/index.php?req=${searchString}&lg_topic=libgen&open=0&view=simple&res=25&phrase=1&column=def`;
     console.log(url);
     return url;
 }
