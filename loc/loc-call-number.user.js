@@ -5,6 +5,7 @@
 // @version     0.0.7
 // @description Copy the call number 
 // @homepageURL https://github.com/holyspiritomb/userscripts
+// @updateURL   https://raw.githubusercontent.com/holyspiritomb/userscripts/main/loc/loc-call-number.user.js
 // @license     MIT
 // @match       https://id.loc.gov/resources/works/*
 // @run-at      document-idle
