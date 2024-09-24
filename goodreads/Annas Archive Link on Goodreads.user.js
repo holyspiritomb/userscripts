@@ -2,7 +2,7 @@
 // @name        Anna's Archive Link on Goodreads
 // @namespace   https://github.com/holyspiritomb
 // @author      holyspiritomb
-// @version     1.0.1
+// @version     1.0.2
 // @description Based on the firefox extension by Saeed Moqadam https://addons.mozilla.org/en-US/firefox/addon/libgen-download-link/. Works with Violentmonkey and Adguard for Android (when used as a userscript manager).
 // @homepageURL https://github.com/holyspiritomb/userscripts
 // @updateURL   https://raw.githubusercontent.com/holyspiritomb/userscripts/main/goodreads/Annas%20Archive%20Link%20on%20Goodreads.user.js
@@ -53,16 +53,16 @@ function addDownloadLink(bookElem) {
     link.style.lineHeight = "25px";
     link.style.fontWeight = "normal";
     link.style.textDecoration = "none";
-    let svgEl = document.createElement("svg");
-    svgEl.setAttribute("xmlns", "http://www.w3.org/2000/svg");
-    svgEl.setAttribute("viewBox", "0 0 512 512");
-    let svgComment = document.createComment("Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.");
-    svgEl.append(svgComment);
-    let svgPath = document.createElement("path");
-    svgPath.setAttribute("fill", "#222");
-    svgPath.setAttribute("d", "M256 0C114.6 0 0 114.6 0 256S114.6 512 256 512s256-114.6 256-256S397.4 0 256 0zM127 297c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l71 71L232 120c0-13.3 10.7-24 24-24s24 10.7 24 24l0 214.1 71-71c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9L273 409c-9.4 9.4-24.6 9.4-33.9 0L127 297z");
-    svgEl.append(svgPath);
-    link.append(svgEl);
+    const ns = "http://www.w3.org/2000/svg";
+    let svgEl = document.createElementNS(ns, "svg");
+    svgEl.setAttributeNS(null, "viewBox", "0 0 512 512");
+    // let svgComment = document.createComment("Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.");
+    // svgEl.append(svgComment);
+    let svgPath = document.createElementNS(ns, "path");
+    svgPath.setAttributeNS(null, "fill", "#222");
+    svgPath.setAttributeNS(null, "d", "M256 0C114.6 0 0 114.6 0 256S114.6 512 256 512s256-114.6 256-256S397.4 0 256 0zM127 297c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l71 71L232 120c0-13.3 10.7-24 24-24s24 10.7 24 24l0 214.1 71-71c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9L273 409c-9.4 9.4-24.6 9.4-33.9 0L127 297z");
+    svgEl.appendChild(svgPath);
+    link.appendChild(svgEl);
     bookElem.before(link);
 }
 
