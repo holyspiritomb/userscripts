@@ -2,8 +2,8 @@
 // @name        LOC call number copy
 // @namespace   https://github.com/holyspiritomb
 // @author      holyspiritomb
-// @version     0.0.7
-// @description Copy the call number 
+// @version     0.1.0
+// @description Copy the call number.
 // @homepageURL https://github.com/holyspiritomb/userscripts
 // @updateURL   https://raw.githubusercontent.com/holyspiritomb/userscripts/main/loc/loc-call-number.user.js
 // @license     MIT
@@ -18,6 +18,7 @@
 // ==/UserScript==
 
 var lccNumber;
+var firstPart;
 var workTitle;
 var authorName;
 
@@ -58,10 +59,14 @@ $("div.bf-display-classification > dd").each(
             let callNumber = wholeThing.replace("LCC: ", "").replace("  ", "");
             logger(callNumber);
             lccNumber = callNumber;
+            firstPart = callNumber.split(" ")[0];
             logger(lccNumber);
+            logger(firstPart);
             // lccNumber = this.innerText.replace("LCC: ", "").replace(" (Assigner: dlc)", "");
             $("h1").after(`<div id="callnumber">${lccNumber} <span> </span></div>`);
+            $("h1").after(`<div id="callnumber2">${firstPart} <span> </span></div>`);
             $("div#callnumber > span").append('\u{1F4CB}'); //clipboard emoji
+            $("div#callnumber2 > span").append('\u{1F4CB}'); //clipboard emoji
         }
 });
 
@@ -71,6 +76,13 @@ if (lccNumber != null) {
         this.innerHTML = "";
         // this.append('\u2713');
         this.append('\u{1f44d}'); //thumbs up emoji
+        $("div#callnumber2 > span").text = '\u{1f4cb}';
+    });
+    $("div#callnumber2 > span").on('click', function(){
+        GM_setClipboard(firstPart);
+        this.innerHTML = "";
+        this.append('\u{1f44d}'); //thumbs up emoji
+        $("div#callnumber > span").text = '\u{1f4cb}';
     });
 }
 
