@@ -10,11 +10,9 @@
 // @license      MIT
 // @version      1.0
 // @match        {regex}
-// @include      {regex}
 // @exclude      {regex}
 // @run-at       document-start
 // @grant        GM_addStyle
-// @grant        unsafeWindow // possibly needed for adguard
 // @require
 // @resource
 // ==/UserScript==

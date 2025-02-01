@@ -8,8 +8,8 @@
 // @license      MIT
 // @homepageURL  https://github.com/holyspiritomb/userscripts
 // @updateURL    https://raw.githubusercontent.com/holyspiritomb/userscripts/main/greasyfork/greasyfork-code-font-victor.user.js
-// @include      https://greasyfork.org/*
-// @include      https://*.greasyfork.org/*
+// @match        https://greasyfork.org/*
+// @match        https://*.greasyfork.org/*
 // @run-at       document-start
 // @grant        GM_addStyle
 // @grant        GM_getResourceURL
