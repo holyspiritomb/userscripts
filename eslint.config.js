@@ -6,6 +6,14 @@ import globals from 'globals';
 export default [
   eslint.configs.recommended,
   {
+    files: ["libraries/*.js"],
+    languageOptions: {
+      globals: {
+        ...globals.browser
+      }
+    }
+  },
+  {
     files: ["**/*.user.js"],
     plugins: {
       userscripts: {
@@ -16,7 +24,6 @@ export default [
       ...userscripts.configs.recommended.rules,
       "userscripts/require-download-url": 0,
       "userscripts/use-homepage-and-url": 0,
-      "userscripts/align-attributes": 0
     },
     languageOptions: {
       globals: {
