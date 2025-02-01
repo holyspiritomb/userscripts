@@ -139,6 +139,11 @@
   resolved "https://registry.yarnpkg.com/@eslint-community/regexpp/-/regexpp-4.12.1.tgz#cfc6cffe39df390a3841cde2abccf92eaa7ae0e0"
   integrity sha512-CCZCDJuduB9OUkFkY2IgppNZMi2lBQgD2qzwXkEia16cge2pijY/aXi96CJMquDMn3nJdlPV1A5KrJEXwfLNzQ==
 
+"@eslint-stylistic/metadata@^3.0.1":
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/@eslint-stylistic/metadata/-/metadata-3.0.1.tgz#978e93c9ad9b5aee6133d894b0eac998a57f32fe"
+  integrity sha512-1kk4vEuRdnBoNOa51vgejsz5HI1IcyKtF4b+oOzVJFPvS900DynSYC6G4ETbzQKt1K5Ywd0NxS98lUzk2K6s0A==
+
 "@eslint/config-array@^0.19.0":
   version "0.19.2"
   resolved "https://registry.yarnpkg.com/@eslint/config-array/-/config-array-0.19.2.tgz#3060b809e111abfc97adb0bb1172778b90cb46aa"

@@ -17,7 +17,7 @@
 function getAsinfromEl(elem) {
     let asin;
     let elId = elem.id;
-     
+
     let asinsplit = elId.split('-');
     asin = asinsplit[4];
     return asin;
@@ -26,7 +26,7 @@ function getAsinfromEl(elem) {
 function getAsinfromUrl() {
     let asin;
     let url = location.href;
-     
+
     asin = url.split("/")[5];
     asin = asin.split("?")[0];
     console.log(asin);

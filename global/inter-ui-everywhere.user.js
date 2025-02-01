@@ -29,52 +29,52 @@
     let interBoldIt = GM_getResourceURL("interBoldIt", false);
     var css = "";
     css += `
-		@font-face {
-		  font-family: 'Inter';
-		  font-style:  normal;
-		  font-weight: 400;
-		  font-display: swap;
-		  src: url(${interReg}) format("woff2");
-		}
-		@font-face {
-		  font-family: 'Inter';
-		  font-style:  italic;
-		  font-weight: 400;
-		  font-display: swap;
-		  src: url(${interIt}) format("woff2");
-		}
+    @font-face {
+      font-family: 'Inter';
+      font-style:  normal;
+      font-weight: 400;
+      font-display: swap;
+      src: url(${interReg}) format("woff2");
+    }
+    @font-face {
+      font-family: 'Inter';
+      font-style:  italic;
+      font-weight: 400;
+      font-display: swap;
+      src: url(${interIt}) format("woff2");
+    }
 
-		@font-face {
-		  font-family: 'Inter';
-		  font-style:  normal;
-		  font-weight: 500;
-		  font-display: swap;
-		  src: url(${interMed}) format("woff2");
-		}
-		@font-face {
-		  font-family: 'Inter';
-		  font-style:  italic;
-		  font-weight: 500;
-		  font-display: swap;
-		  src: url(${interMedIt}) format("woff2");
-		}
+    @font-face {
+      font-family: 'Inter';
+      font-style:  normal;
+      font-weight: 500;
+      font-display: swap;
+      src: url(${interMed}) format("woff2");
+    }
+    @font-face {
+      font-family: 'Inter';
+      font-style:  italic;
+      font-weight: 500;
+      font-display: swap;
+      src: url(${interMedIt}) format("woff2");
+    }
 
-		@font-face {
-		  font-family: 'Inter';
-		  font-style:  normal;
-		  font-weight: 700;
-		  font-display: swap;
-		  src: url(${interBold}) format("woff2");
-		}
-		@font-face {
-		  font-family: 'Inter';
-		  font-style:  italic;
-		  font-weight: 700;
-		  font-display: swap;
-		  src: url(${interBoldIt}) format("woff2");
-		}
+    @font-face {
+      font-family: 'Inter';
+      font-style:  normal;
+      font-weight: 700;
+      font-display: swap;
+      src: url(${interBold}) format("woff2");
+    }
+    @font-face {
+      font-family: 'Inter';
+      font-style:  italic;
+      font-weight: 700;
+      font-display: swap;
+      src: url(${interBoldIt}) format("woff2");
+    }
 
-		html,body,:root { font-family: 'Inter', system-ui, sans-serif !important }`;
+    html,body,:root { font-family: 'Inter', system-ui, sans-serif !important }`;
     if (typeof GM_addStyle != "undefined") {
         GM_addStyle(css);
     } else {

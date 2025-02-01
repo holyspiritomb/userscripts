@@ -25,7 +25,7 @@ DarkReader.enable(
         darkSchemeBackgroundColor: "#1a1b26",
         darkSchemeTextColor: "#a9b1d6",
         selectionColor: "#ffaaff",
-        darkColorScheme: "Tokyo Night"
+        darkColorScheme: "Tokyo Night",
     },
     {
         invert: [""],
@@ -35,5 +35,5 @@ DarkReader.enable(
         ignoreInlineStyle: [""],
         ignoreImageAnalysis: [""],
         disableStyleSheetsProxy: false,
-    }
+    },
 );

@@ -46,7 +46,7 @@ function addAsin(element, asin) {
     asinForReal.id = "mobiasin";
     asinForReal.append(asin);
     asinWrapper.append(asinForReal);
-    
+
     if (asin != null){
         console.log(asin);
         element.after(asinWrapper);
@@ -68,7 +68,7 @@ var asin;
 
 setTimeout( function () {
     const jsonstring = document.querySelector("script#__NEXT_DATA__").text;
-    const jsonobj = JSON.parse(jsonstring); 
+    const jsonobj = JSON.parse(jsonstring);
     const bookId = findBookInfo(jsonobj.props.pageProps.apolloState);
     const bookInfo = jsonobj.props.pageProps.apolloState[bookId];
     if (bookInfo["details"]["format"] === "Kindle Edition"){

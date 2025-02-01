@@ -23,5 +23,5 @@ DarkReader.enable({
     darkSchemeBackgroundColor: "#1a1b26",
     darkSchemeTextColor: "#a9b1d6",
     selectionColor: "#ffaaff",
-    darkColorScheme: "Tokyo Night"
+    darkColorScheme: "Tokyo Night",
 });

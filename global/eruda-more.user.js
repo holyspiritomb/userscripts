@@ -10,20 +10,20 @@
 // @connect      cdn.jsdelivr.net
 // @connect      https://cdn.jsdelivr.net
 // @homepageURL  https://github.com/holyspiritomb/userscripts
-// @description  Eruda persistent mobile devtools, for troubleshooting on mobile. Targeting mobile Vivaldi via Adguard for Android. 
+// @description  Eruda persistent mobile devtools, for troubleshooting on mobile. Targeting mobile Vivaldi via Adguard for Android.
 // @noframes
 // ==/UserScript==
 
 /* globals eruda */
 (function () {
-     
+
     eruda.init({
         tool: [
-            'console', 'elements', 'info', 'resources', 'sources', 'snippets'
+            'console', 'elements', 'info', 'resources', 'sources', 'snippets',
         ],
-        defaults: {theme: 'Dracula', displaySize: 40, transparency: 0.9}
+        defaults: {theme: 'Dracula', displaySize: 40, transparency: 0.9},
     });
-     
+
     eruda.position({x: 50, y: 50});
     let console = eruda.get('console');
     console.config.set('displayExtraInfo', true);

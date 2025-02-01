@@ -15,8 +15,8 @@
 // @run-at       document-start
 // @grant        GM_addStyle
 // @grant        unsafeWindow // possibly needed for adguard
-// @require       
-// @resource      
+// @require
+// @resource
 // ==/UserScript==
 
 (function() {

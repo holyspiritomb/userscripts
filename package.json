@@ -7,6 +7,7 @@
   "private": true,
   "type": "module",
   "devDependencies": {
+    "@eslint-stylistic/metadata": "^3.0.1",
     "@eslint/js": "^9.19.0",
     "@stylistic/eslint-plugin-js": "^3.0.1",
     "eslint": "^9.19.0",

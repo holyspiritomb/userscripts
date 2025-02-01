@@ -43,7 +43,7 @@ function findBookAuthors(obj){
 
 function inList(itemToTest, someList) {
     let itemIndex = someList.indexOf(itemToTest);
-     
+
     if (itemIndex == - 1) {
         return false;
     } else {
