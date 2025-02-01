@@ -18,8 +18,10 @@
 (function () {
      
     eruda.init({
-        tool: ['console', 'elements', 'info', 'resources', 'sources', 'snippets'],
-        defaults: {theme: 'Dracula', displaySize:40, transparency:0.9}
+        tool: [
+            'console', 'elements', 'info', 'resources', 'sources', 'snippets'
+        ],
+        defaults: {theme: 'Dracula', displaySize: 40, transparency: 0.9}
     });
      
     eruda.position({x: 50, y: 50});

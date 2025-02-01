@@ -14,27 +14,27 @@
 // ==/UserScript==
 
 function getAuthor() {
-  const metadata = document.querySelector("head > script[type='application/ld+json']").text;
-  const jsonData = JSON.parse(metadata);
-  let authorName = jsonData.author[0].name;
-  if (authorName != undefined) {
-    return authorName
-  } else {
-    return " "
-  }
+    const metadata = document.querySelector("head > script[type='application/ld+json']").text;
+    const jsonData = JSON.parse(metadata);
+    let authorName = jsonData.author[0].name;
+    if (authorName != undefined) {
+        return authorName;
+    } else {
+        return " ";
+    }
 }
 
 function createURL(title, author) {
     title = title.trim();
     let searchTitle = title.replace(/\(.*\)/, "").replace(/^\s+|\s+$/g, '').replace(/[&|,]/g, ' ').replace(/: .*/, '').replace(/[ ]+/, ' ');
-    searchTitle = searchTitle.trim()
+    searchTitle = searchTitle.trim();
     let searchString;
     if (author == " "){
-      searchString = encodeURIComponent(searchTitle);
+        searchString = encodeURIComponent(searchTitle);
     } else {
-      searchString = encodeURIComponent(`${author} ${searchTitle}`);
+        searchString = encodeURIComponent(`${author} ${searchTitle}`);
     }
-    let url = `https://annas-archive.se/search?index=&page=1&q=${searchString}&sort=newest`
+    let url = `https://annas-archive.se/search?index=&page=1&q=${searchString}&sort=newest`;
     return url;
 }
 

@@ -16,10 +16,12 @@
 // https://libraryweb.overdrive.com/media/9141385
 function odToLibbyMedia(url) {
     let lUrl = url.replace("://", "://libbyapp.com/library/").replace(".overdrive.com/media", "");
+    /* eslint-disable-next-line @stylistic/js/space-unary-ops */
     let book = url.slice(-7);
-    let urlPrefix = lUrl.slice(0,-8);
+    /* eslint-disable-next-line @stylistic/js/space-unary-ops */
+    let urlPrefix = lUrl.slice(0, -8);
     let libbyUrl = urlPrefix + "/similar-" + book + "/page-1/" + book;
-    return libbyUrl
+    return libbyUrl;
 }
 
 setTimeout( function () {

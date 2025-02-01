@@ -14,25 +14,25 @@
 // ==/UserScript==
 
 function getAuthor() {
-  const metadata = document.querySelector("head > script[type='application/ld+json']").text;
-  const jsonData = JSON.parse(metadata);
-  let authorName = jsonData.author[0].name;
-  if (authorName != undefined) {
-    return authorName
-  } else {
-    return " "
-  }
+    const metadata = document.querySelector("head > script[type='application/ld+json']").text;
+    const jsonData = JSON.parse(metadata);
+    let authorName = jsonData.author[0].name;
+    if (authorName != undefined) {
+        return authorName;
+    } else {
+        return " ";
+    }
 }
 
 function createURL(title, author) {
     title = title.trim();
     let searchTitle = title.replace(/\(.*\)/, "").replace(/^\s+|\s+$/g, '').replace(/[&|,]/g, ' ').replace(/: .*/, '').replace(/[ ]+/, ' ');
-    searchTitle = searchTitle.trim()
+    searchTitle = searchTitle.trim();
     let searchString;
     if (author == " "){
-      searchString = encodeURIComponent(searchTitle);
+        searchString = encodeURIComponent(searchTitle);
     } else {
-      searchString = encodeURIComponent(`${author} ${searchTitle}`);
+        searchString = encodeURIComponent(`${author} ${searchTitle}`);
     }
     let url = `https://libgen.gs/index.php?req=${searchString}&lg_topic=libgen&open=0&view=simple&res=25&phrase=1&column=def`;
     return url;

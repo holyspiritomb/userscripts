@@ -18,7 +18,9 @@
 (function () {
      
     eruda.init({
-        tool: ['console', 'elements', 'info', 'resources', 'snippets'],
+        tool: [
+            'console', 'elements', 'info', 'resources', 'snippets'
+        ],
         defaults: {displaySize: 40, transparency: 0.8, theme: 'Dracula'}
     });
      

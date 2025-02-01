@@ -12,19 +12,19 @@
 let locCode = document.querySelector("span[property='madsrdf:code skos:notation']").innerText;
 var locSubj;
 if (document.querySelector("span[property='madsrdf:authoritativeLabel skos:prefLabel']")) {
-	locSubj = document.querySelector("span[property='madsrdf:authoritativeLabel skos:prefLabel']").innerText;
+    locSubj = document.querySelector("span[property='madsrdf:authoritativeLabel skos:prefLabel']").innerText;
 } else {
-	locSubj = document.querySelector("h1 > span:last-child").innerText;
+    locSubj = document.querySelector("h1 > span:last-child").innerText;
 }
 let locDescCall = locCode + " " + locSubj;
 console.log(locDescCall);
 
 let inj = document.createElement("div");
-inj.id = "injectedElem"
+inj.id = "injectedElem";
 inj.innerHTML = `<span>${locDescCall}</span>`;
 
 document.querySelector("div[about] > div").after(inj);
-$("#injectedElem").on("click",function(){
-	GM_setClipboard(locDescCall);
-	alert(`copied ${locDescCall}`);
+$("#injectedElem").on("click", function(){
+    GM_setClipboard(locDescCall);
+    alert(`copied ${locDescCall}`);
 });

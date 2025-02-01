@@ -15,8 +15,8 @@
 // ==/UserScript==
 
 (function() {
-  var css = "";
-  css += `
+    var css = "";
+    css += `
   @font-face {
     font-family: 'Noto Color Emoji';
     font-style: normal;
@@ -120,19 +120,19 @@
       font-display: swap;
    } */
   `;
-  console.log(css);
-  if (typeof GM_addStyle != "undefined") {
-    GM_addStyle(css);
-  } else {
-    var node = document.createElement("style");
-    node.type = "text/css";
-    node.appendChild(document.createTextNode(css));
-    var heads = document.getElementsByTagName("head");
-    if (heads.length > 0) {
-      heads[0].appendChild(node);
+    console.log(css);
+    if (typeof GM_addStyle != "undefined") {
+        GM_addStyle(css);
     } else {
-      // no head yet, stick it whereever
-      document.documentElement.appendChild(node);
+        var node = document.createElement("style");
+        node.type = "text/css";
+        node.appendChild(document.createTextNode(css));
+        var heads = document.getElementsByTagName("head");
+        if (heads.length > 0) {
+            heads[0].appendChild(node);
+        } else {
+            // no head yet, stick it whereever
+            document.documentElement.appendChild(node);
+        }
     }
-  }
 })();

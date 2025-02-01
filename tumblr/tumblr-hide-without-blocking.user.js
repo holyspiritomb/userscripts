@@ -22,6 +22,7 @@ let valueArrayList = GM_listValues();
 
 function inList(itemToTest, someList) {
     let itemIndex = someList.indexOf(itemToTest);
+    /* eslint-disable-next-line @stylistic/js/space-unary-ops */
     if (itemIndex == -1) {
         return false;
     } else {
@@ -34,6 +35,7 @@ function annotateConversations() {
         let friendName = $(this)[0].innerText;
         let conversation = $(this).closest('button');
         let convClasses = Array.from(conversation[0].classList);
+        /* eslint-disable-next-line @stylistic/js/space-unary-ops */
         if (convClasses.indexOf(friendName) < -1) {
             conversation.addClass(friendName);
             console.log(`added ${friendName} as class to a conversation`);
@@ -71,6 +73,7 @@ if (valueArrayList) {
         } else {
             waitForKeyElements("button[aria-label='Conversation'] div.pTvJc", function() {
                 annotateConversations();
+                /* eslint-disable-next-line @stylistic/js/space-unary-ops */
             }, false, 300, -1);
         }
     } else {

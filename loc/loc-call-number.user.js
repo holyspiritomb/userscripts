@@ -33,7 +33,7 @@ function logger(logMsg){
     if (debug){
         console.log(logMsg);
     } else {
-        return
+        return;
     }
 }
 
@@ -49,12 +49,13 @@ $("div.bf-display-classification > dd").each(
     function() {
         let wholeThing = this.childNodes[0].wholeText;
         let catalogType = this.childNodes[0].wholeText.split(":")[0];
+        /* eslint-disable-next-line @stylistic/js/space-unary-ops */
         let year = wholeThing.slice(-5);
-        logger(wholeThing)
-        logger(catalogType)
-        logger(year)
+        logger(wholeThing);
+        logger(catalogType);
+        logger(year);
         if (catalogType == "LCC") { // perhaps: if (wholeThing.startsWith("LCC"))
-            logger(this)
+            logger(this);
             let callNumber = wholeThing.replace("LCC: ", "").replace("  ", "");
             logger(callNumber);
             lccNumber = callNumber;
@@ -67,7 +68,7 @@ $("div.bf-display-classification > dd").each(
             $("div#callnumber > span").append('\u{1F4CB}'); //clipboard emoji
             $("div#callnumber2 > span").append('\u{1F4CB}'); //clipboard emoji
         }
-});
+    });
 
 if (lccNumber != null) {
     $("div#callnumber > span").on('click', function(){
