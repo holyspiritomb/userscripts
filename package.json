@@ -1,0 +1,17 @@
+{
+  "name": "userscripts",
+  "version": "1.0.0",
+  "repository": "ssh://github.com/holyspiritomb/userscripts.git",
+  "author": "Hezekiah Michael <spiritomb@protonmail.com>",
+  "license": "MIT",
+  "private": true,
+  "type": "module",
+  "devDependencies": {
+    "@eslint/js": "^9.19.0",
+    "eslint": "^9.19.0",
+    "eslint-plugin-userscripts": "^0.5.6",
+    "globals": "^15.14.0",
+    "vite": "^6.0.7",
+    "vite-plugin-monkey": "^5.0.4"
+  }
+}
