@@ -1,23 +1,23 @@
 // ==UserScript==
-// @name        ASIN on Audible Pages
-// @namespace   https://github.com/holyspiritomb
-// @author      holyspiritomb
-// @version     1.0.0
-// @description Makes cataloguing my audiobooks easier.
-// @homepageURL https://github.com/holyspiritomb/userscripts
-// @updateURL   https://raw.githubusercontent.com/holyspiritomb/userscripts/main/amazon/asin_on_audible.user.js
-// @license     MIT
-// @match       *://www.audible.com/*
-// @run-at      document-end
-// @grant       none
-// @require     https://code.jquery.com/jquery-latest.min.js
+// @name         ASIN on Audible Pages
+// @namespace    https://github.com/holyspiritomb
+// @author       holyspiritomb
+// @version      1.0.0
+// @description  Makes cataloguing my audiobooks easier.
+// @homepageURL  https://github.com/holyspiritomb/userscripts
+// @updateURL    https://raw.githubusercontent.com/holyspiritomb/userscripts/main/amazon/asin_on_audible.user.js
+// @license      MIT
+// @match        *://www.audible.com/*
+// @run-at       document-end
+// @grant        none
+// @require      https://code.jquery.com/jquery-latest.min.js
 // ==/UserScript==
 
 
 function getAsinfromEl(elem) {
     let asin;
     let elId = elem.id;
-    // eslint-disable-next-line space-unary-ops
+     
     let asinsplit = elId.split('-');
     asin = asinsplit[4];
     return asin;
@@ -26,7 +26,7 @@ function getAsinfromEl(elem) {
 function getAsinfromUrl() {
     let asin;
     let url = location.href;
-    // eslint-disable-next-line space-unary-ops
+     
     asin = url.split("/")[5];
     asin = asin.split("?")[0];
     console.log(asin);

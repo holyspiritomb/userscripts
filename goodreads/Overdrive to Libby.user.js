@@ -1,19 +1,19 @@
 // ==UserScript==
-// @name        Overdrive URL to Libby
-// @namespace   https://github.com/holyspiritomb
-// @author      spiritomb
-// @version     0.0.3
-// @description Changes Overdrive library links to Libby links.
-// @match       https://www.goodreads.com/book/show/*
-// @match       https://www.goodreads.com/review/list/*
-// @match       https://www.goodreads.com/list/*
-// @match       https://www.goodreads.com/search*
-// @run-at      document-end
-// @grant       none
-// @homepageURL https://github.com/holyspiritomb/userscripts
-// @updateURL   https://raw.githubusercontent.com/holyspiritomb/userscripts/main/goodreads/Overdrive%20to%20Libby.user.js
-// @icon        https://www.google.com/s2/favicons?domain=goodreads.com
-// @require     https://code.jquery.com/jquery-latest.min.js
+// @name         Overdrive URL to Libby
+// @namespace    https://github.com/holyspiritomb
+// @author       spiritomb
+// @version      0.0.3
+// @description  Changes Overdrive library links to Libby links.
+// @match        https://www.goodreads.com/book/show/*
+// @match        https://www.goodreads.com/review/list/*
+// @match        https://www.goodreads.com/list/*
+// @match        https://www.goodreads.com/search*
+// @run-at       document-end
+// @grant        none
+// @homepageURL  https://github.com/holyspiritomb/userscripts
+// @updateURL    https://raw.githubusercontent.com/holyspiritomb/userscripts/main/goodreads/Overdrive%20to%20Libby.user.js
+// @icon         https://www.google.com/s2/favicons?domain=goodreads.com
+// @require      https://code.jquery.com/jquery-latest.min.js
 // ==/UserScript==
 
 function odToLibby(elem) {

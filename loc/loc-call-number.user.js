@@ -1,26 +1,25 @@
 // ==UserScript==
-// @name        LOC call number copy
-// @namespace   https://github.com/holyspiritomb
-// @author      holyspiritomb
-// @version     0.1.0
-// @description Copy the call number.
-// @homepageURL https://github.com/holyspiritomb/userscripts
-// @updateURL   https://raw.githubusercontent.com/holyspiritomb/userscripts/main/loc/loc-call-number.user.js
-// @license     MIT
-// @match       https://id.loc.gov/resources/works/*
-// @run-at      document-idle
-// @grant       unsafeWindow
-// @grant       GM_setClipboard
-// @grant       GM_getValue
-// @grant       GM_setValue
-// @grant       GM_listValues
-// @require     https://code.jquery.com/jquery-latest.min.js
+// @name         LOC call number copy
+// @namespace    https://github.com/holyspiritomb
+// @author       holyspiritomb
+// @version      0.1.0
+// @description  Copy the call number.
+// @homepageURL  https://github.com/holyspiritomb/userscripts
+// @updateURL    https://raw.githubusercontent.com/holyspiritomb/userscripts/main/loc/loc-call-number.user.js
+// @license      MIT
+// @match        https://id.loc.gov/resources/works/*
+// @run-at       document-idle
+// @grant        unsafeWindow
+// @grant        GM_setClipboard
+// @grant        GM_getValue
+// @grant        GM_setValue
+// @grant        GM_listValues
+// @require      https://code.jquery.com/jquery-latest.min.js
 // ==/UserScript==
 
 var lccNumber;
 var firstPart;
 var workTitle;
-var authorName;
 
 let valueArrayList = GM_listValues();
 

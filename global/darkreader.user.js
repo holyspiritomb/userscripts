@@ -1,17 +1,18 @@
 // ==UserScript==
-// @name        DarkReader: Global Tokyo Night scheme
-// @namespace   https://github.com/holyspiritomb
-// @author      holyspiritomb
-// @version     1.0
-// @description Apply DarkReader's Tokyo Night colorscheme globally.
-// @homepageURL https://github.com/holyspiritomb/userscripts/blob/main/global/darkreader.user.js
-// @downloadURL https://raw.githubusercontent.com/holyspiritomb/userscripts/main/global/darkreader.user.js
-// @license     MIT
-// @match       *://*
-// @run-at      document-start
-// @grant       none
-// @require     https://cdn.jsdelivr.net/npm/darkreader@4/darkreader.js
+// @name         DarkReader: Global Tokyo Night scheme
+// @namespace    https://github.com/holyspiritomb
+// @author       holyspiritomb
+// @version      1.0
+// @description  Apply DarkReader's Tokyo Night colorscheme globally.
+// @homepageURL  https://github.com/holyspiritomb/userscripts/blob/main/global/darkreader.user.js
+// @downloadURL  https://raw.githubusercontent.com/holyspiritomb/userscripts/main/global/darkreader.user.js
+// @license      MIT
+// @match        *://*
+// @run-at       document-start
+// @grant        none
+// @require      https://cdn.jsdelivr.net/npm/darkreader@4/darkreader.js
 // ==/UserScript==
+
 /* global DarkReader */
 DarkReader.setFetchMethod(window.fetch);
 DarkReader.enable({

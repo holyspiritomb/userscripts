@@ -1,14 +1,14 @@
 // ==UserScript==
-// @name        Classify helper
-// @namespace   https://github.com/holyspiritomb
-// @match       *://classify.oclc.org/classify2/ClassifyDemo*
-// @grant       GM_setClipboard
-// @version     1.2
-// @author      holyspiritomb
-// @run-at      document-idle
-// @updateURL   https://raw.githubusercontent.com/holyspiritomb/userscripts/main/classify/classify-helper.user.js
-// @require     https://code.jquery.com/jquery-latest.min.js
-// @description Make using the web demo easier for copying data into Calibre.
+// @name         Classify helper
+// @namespace    https://github.com/holyspiritomb
+// @match        *://classify.oclc.org/classify2/ClassifyDemo*
+// @grant        GM_setClipboard
+// @version      1.2
+// @author       holyspiritomb
+// @run-at       document-idle
+// @updateURL    https://raw.githubusercontent.com/holyspiritomb/userscripts/main/classify/classify-helper.user.js
+// @require      https://code.jquery.com/jquery-latest.min.js
+// @description  Make using the web demo easier for copying data into Calibre.
 // ==/UserScript==
 
 $('div#display-Summary').after(`

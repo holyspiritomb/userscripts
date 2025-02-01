@@ -1,12 +1,12 @@
 // ==UserScript==
-// @name        LOC classification helper
-// @namespace   https://github.com/holyspiritomb
-// @match       *://id.loc.gov/authorities/classification/*
-// @grant       GM_setClipboard
-// @version     1.0
-// @author      holyspiritomb
-// @require     https://code.jquery.com/jquery-latest.min.js
-// @description 12/16/2022, 9:21:36 PM
+// @name         LOC classification helper
+// @namespace    https://github.com/holyspiritomb
+// @match        *://id.loc.gov/authorities/classification/*
+// @grant        GM_setClipboard
+// @version      1.0
+// @author       holyspiritomb
+// @require      https://code.jquery.com/jquery-latest.min.js
+// @description  12/16/2022, 9:21:36 PM
 // ==/UserScript==
 
 let locCode = document.querySelector("span[property='madsrdf:code skos:notation']").innerText;

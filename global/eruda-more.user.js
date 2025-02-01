@@ -1,26 +1,27 @@
 // ==UserScript==
-// @name        Eruda Mobile devtools customized
-// @namespace   holyspiritomb
-// @match       *://*/*
-// @grant       none
-// @grant       property:settings
-// @version     1.3
-// @author      holyspiritomb
-// @require     https://cdn.jsdelivr.net/npm/eruda
-// @connect     cdn.jsdelivr.net
-// @connect     https://cdn.jsdelivr.net
-// @homepageURL https://github.com/holyspiritomb/userscripts
-// @description Eruda persistent mobile devtools, for troubleshooting on mobile. Targeting mobile Vivaldi via Adguard for Android. 
+// @name         Eruda Mobile devtools customized
+// @namespace    holyspiritomb
+// @match        *://*/*
+// @grant        none
+// @grant        property:settings
+// @version      1.3
+// @author       holyspiritomb
+// @require      https://cdn.jsdelivr.net/npm/eruda
+// @connect      cdn.jsdelivr.net
+// @connect      https://cdn.jsdelivr.net
+// @homepageURL  https://github.com/holyspiritomb/userscripts
+// @description  Eruda persistent mobile devtools, for troubleshooting on mobile. Targeting mobile Vivaldi via Adguard for Android. 
 // @noframes
 // ==/UserScript==
+
 /* globals eruda */
 (function () {
-    /* eslint-disable key-spacing, array-bracket-spacing, array-bracket-newline */
+     
     eruda.init({
         tool: ['console', 'elements', 'info', 'resources', 'sources', 'snippets'],
         defaults: {theme: 'Dracula', displaySize:40, transparency:0.9}
     });
-    /* eslint-enable key-spacing, array-bracket-spacing, array-bracket-newline */
+     
     eruda.position({x: 50, y: 50});
     let console = eruda.get('console');
     console.config.set('displayExtraInfo', true);

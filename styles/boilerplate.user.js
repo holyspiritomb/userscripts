@@ -1,23 +1,24 @@
 // ==UserScript==
-// @name          My Very Cool userstyle as a userscript
-// @namespace     https://github.com/holyspiritomb
-// @description   A very cool userstyle
-// @author        spiritomb
-// @homepageURL   https://github.com/holyspiritomb
-// @downloadURL   x
-// @updateURL     x
-// @supportURL    x
-// @license       MIT
-// @version       1.0
-// @match         {regex}
-// @include       {regex}
-// @exclude       {regex}
-// @run-at        document-start
-// @grant         GM_addStyle
-// @grant         unsafeWindow // possibly needed for adguard
+// @name         My Very Cool userstyle as a userscript
+// @namespace    https://github.com/holyspiritomb
+// @description  A very cool userstyle
+// @author       spiritomb
+// @homepageURL  https://github.com/holyspiritomb
+// @downloadURL  x
+// @updateURL    x
+// @supportURL   x
+// @license      MIT
+// @version      1.0
+// @match        {regex}
+// @include      {regex}
+// @exclude      {regex}
+// @run-at       document-start
+// @grant        GM_addStyle
+// @grant        unsafeWindow // possibly needed for adguard
 // @require       
 // @resource      
 // ==/UserScript==
+
 (function() {
     var css = "";
 

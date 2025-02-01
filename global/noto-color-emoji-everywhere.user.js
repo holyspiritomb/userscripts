@@ -1,18 +1,19 @@
 // ==UserScript==
-// @name          Noto Color Emojis Everywhere
-// @namespace     https://github.com/holyspiritomb
-// @author        spiritomb
-// @version       0.2.1
-// @description	  Use Noto Color Emoji globally on mobile Firefox/Iceraven with Violentmonkey. Use with caution: May cause slower loading.
-// @license       MIT
-// @match         *://*/*
-// @run-at        document-start
-// @grant         GM_addStyle
-// @grant         unsafeWindow
-// @connect       cdn.jsdelivr.net
-// @homepageURL   https://github.com/holyspiritomb/userscripts
-// @updateURL     https://raw.githubusercontent.com/holyspiritomb/userscripts/main/global/noto-color-emoji-everywhere.user.js
+// @name         Noto Color Emojis Everywhere
+// @namespace    https://github.com/holyspiritomb
+// @author       spiritomb
+// @version      0.2.1
+// @description  Use Noto Color Emoji globally on mobile Firefox/Iceraven with Violentmonkey. Use with caution: May cause slower loading.
+// @license      MIT
+// @match        *://*/*
+// @run-at       document-start
+// @grant        GM_addStyle
+// @grant        unsafeWindow
+// @connect      cdn.jsdelivr.net
+// @homepageURL  https://github.com/holyspiritomb/userscripts
+// @updateURL    https://raw.githubusercontent.com/holyspiritomb/userscripts/main/global/noto-color-emoji-everywhere.user.js
 // ==/UserScript==
+
 (function() {
   var css = "";
   css += `

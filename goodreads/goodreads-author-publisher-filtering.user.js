@@ -1,18 +1,18 @@
 // ==UserScript==
-// @name        Goodreads Author and Publisher Avoiding
-// @namespace   https://github.com/holyspiritomb
-// @author      spiritomb
-// @version     1.0.1
-// @description Warns you with iconography if a book's publisher or author is in your avoid lists.
-// @match       https://www.goodreads.com/book/show/*
-// @run-at      document-end
-// @grant       GM_listValues
-// @grant       GM_getValue
-// @grant       GM_setValue
-// @grant       GM_addStyle
-// @homepageURL https://github.com/holyspiritomb/userscripts
-// @updateURL   https://raw.githubusercontent.com/holyspiritomb/userscripts/main/goodreads/goodreads-author-publisher-filtering.user.js
-// @icon        https://www.google.com/s2/favicons?domain=goodreads.com
+// @name         Goodreads Author and Publisher Avoiding
+// @namespace    https://github.com/holyspiritomb
+// @author       spiritomb
+// @version      1.0.1
+// @description  Warns you with iconography if a book's publisher or author is in your avoid lists.
+// @match        https://www.goodreads.com/book/show/*
+// @run-at       document-end
+// @grant        GM_listValues
+// @grant        GM_getValue
+// @grant        GM_setValue
+// @grant        GM_addStyle
+// @homepageURL  https://github.com/holyspiritomb/userscripts
+// @updateURL    https://raw.githubusercontent.com/holyspiritomb/userscripts/main/goodreads/goodreads-author-publisher-filtering.user.js
+// @icon         https://www.google.com/s2/favicons?domain=goodreads.com
 // ==/UserScript==
 
 let valueArrayList = GM_listValues();
@@ -43,7 +43,7 @@ function findBookAuthors(obj){
 
 function inList(itemToTest, someList) {
     let itemIndex = someList.indexOf(itemToTest);
-    // eslint-disable-next-line space-unary-ops
+     
     if (itemIndex == -1) {
         return false;
     } else {

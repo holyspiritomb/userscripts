@@ -1,16 +1,16 @@
 // ==UserScript==
-// @name        Libgen Download Link on Goodreads
-// @namespace   https://github.com/holyspiritomb
-// @author      holyspiritomb
-// @version     2.0.2
-// @description Based on the firefox extension by Saeed Moqadam https://addons.mozilla.org/en-US/firefox/addon/libgen-download-link/ and tested with Adguard for Android (on Kiwi Browser and Android Vivaldi) and with Violentmonkey on Iceraven, desktop Firefox, and desktop Vivaldi.
-// @homepageURL https://github.com/holyspiritomb/userscripts
-// @updateURL   https://raw.githubusercontent.com/holyspiritomb/userscripts/main/goodreads/Libgen%20Download%20Link%20on%20Goodreads.user.js
-// @license     MIT
-// @match       *://www.goodreads.com/book/show/*
-// @run-at      document-end
-// @grant       none
-// @require     https://code.jquery.com/jquery-latest.min.js
+// @name         Libgen Download Link on Goodreads
+// @namespace    https://github.com/holyspiritomb
+// @author       holyspiritomb
+// @version      2.0.2
+// @description  Based on the firefox extension by Saeed Moqadam https://addons.mozilla.org/en-US/firefox/addon/libgen-download-link/ and tested with Adguard for Android (on Kiwi Browser and Android Vivaldi) and with Violentmonkey on Iceraven, desktop Firefox, and desktop Vivaldi.
+// @homepageURL  https://github.com/holyspiritomb/userscripts
+// @updateURL    https://raw.githubusercontent.com/holyspiritomb/userscripts/main/goodreads/Libgen%20Download%20Link%20on%20Goodreads.user.js
+// @license      MIT
+// @match        *://www.goodreads.com/book/show/*
+// @run-at       document-end
+// @grant        none
+// @require      https://code.jquery.com/jquery-latest.min.js
 // ==/UserScript==
 
 function getAuthor() {

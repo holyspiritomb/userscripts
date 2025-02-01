@@ -1,16 +1,16 @@
 // ==UserScript==
-// @name        Anna's Archive Link on Goodreads
-// @namespace   https://github.com/holyspiritomb
-// @author      holyspiritomb
-// @version     1.0.3
-// @description Based on the firefox extension by Saeed Moqadam https://addons.mozilla.org/en-US/firefox/addon/libgen-download-link/. Works with Violentmonkey and Adguard for Android (when used as a userscript manager).
-// @homepageURL https://github.com/holyspiritomb/userscripts
-// @updateURL   https://raw.githubusercontent.com/holyspiritomb/userscripts/main/goodreads/Annas%20Archive%20Link%20on%20Goodreads.user.js
-// @license     MIT
-// @match       *://www.goodreads.com/book/show/*
-// @run-at      document-end
-// @grant       none
-// @require     https://code.jquery.com/jquery-latest.min.js
+// @name         Anna's Archive Link on Goodreads
+// @namespace    https://github.com/holyspiritomb
+// @author       holyspiritomb
+// @version      1.0.3
+// @description  Based on the firefox extension by Saeed Moqadam https://addons.mozilla.org/en-US/firefox/addon/libgen-download-link/. Works with Violentmonkey and Adguard for Android (when used as a userscript manager).
+// @homepageURL  https://github.com/holyspiritomb/userscripts
+// @updateURL    https://raw.githubusercontent.com/holyspiritomb/userscripts/main/goodreads/Annas%20Archive%20Link%20on%20Goodreads.user.js
+// @license      MIT
+// @match        *://www.goodreads.com/book/show/*
+// @run-at       document-end
+// @grant        none
+// @require      https://code.jquery.com/jquery-latest.min.js
 // ==/UserScript==
 
 function getAuthor() {

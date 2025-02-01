@@ -1,17 +1,18 @@
 // ==UserScript==
-// @name        Overdrive: LOC search link
-// @namespace   https://github.com/holyspiritomb
-// @author      holyspiritomb
-// @version     0.0.1
-// @description Injects a link to LOC search results under the rating on Overdrive library pages.
-// @homepageURL https://github.com/holyspiritomb/userscripts
-// @downloadURL https://raw.githubusercontent.com/holyspiritomb/userscripts/main/overdrive/inject-loc-link.user.js
-// @license     MIT
-// @match       https://*.overdrive.com/*/content/media/*
-// @run-at      document-end
-// @require     https://code.jquery.com/jquery-latest.min.js
-// @grant       none
+// @name         Overdrive: LOC search link
+// @namespace    https://github.com/holyspiritomb
+// @author       holyspiritomb
+// @version      0.0.1
+// @description  Injects a link to LOC search results under the rating on Overdrive library pages.
+// @homepageURL  https://github.com/holyspiritomb/userscripts
+// @downloadURL  https://raw.githubusercontent.com/holyspiritomb/userscripts/main/overdrive/inject-loc-link.user.js
+// @license      MIT
+// @match        https://*.overdrive.com/*/content/media/*
+// @run-at       document-end
+// @require      https://code.jquery.com/jquery-latest.min.js
+// @grant        none
 // ==/UserScript==
+
 // https://id.loc.gov/search/?q=${searchquery}&q=cs%3Ahttp%3A%2F%2Fid.loc.gov%2Fresources%2Fworks
 
 var niceauthor;

@@ -1,19 +1,19 @@
 // ==UserScript==
-// @name        Tumblr hide without blocking
-// @namespace   https://github.com/holyspiritomb
-// @match       https://www.tumblr.com/*
-// @grant       GM_getValue
-// @grant		GM_setValue
-// @grant       GM_addStyle
-// @grant		GM_listValues
-// @version     0.0.5
-// @author      holyspiritomb
-// @run-at      document-end
-// @require     https://code.jquery.com/jquery-latest.min.js
-// @require     https://greasyfork.org/scripts/446257-waitforkeyelements-utility-function/code/waitForKeyElements%20utility%20function.js?version=1059316
-// @inject-into page
-// @icon        https://www.google.com/s2/favicons?domain=tumblr.com
-// @description Hides conversations in the messages dialog with specific users, and stops those users from appearing as suggested recipients of posts when you click share.
+// @name         Tumblr hide without blocking
+// @namespace    https://github.com/holyspiritomb
+// @match        https://www.tumblr.com/*
+// @grant        GM_getValue
+// @grant        GM_setValue
+// @grant        GM_addStyle
+// @grant        GM_listValues
+// @version      0.0.5
+// @author       holyspiritomb
+// @run-at       document-end
+// @require      https://code.jquery.com/jquery-latest.min.js
+// @require      https://greasyfork.org/scripts/446257-waitforkeyelements-utility-function/code/waitForKeyElements%20utility%20function.js?version=1059316
+// @inject-into  page
+// @icon         https://www.google.com/s2/favicons?domain=tumblr.com
+// @description  Hides conversations in the messages dialog with specific users, and stops those users from appearing as suggested recipients of posts when you click share.
 // ==/UserScript==
 
 /* global waitForKeyElements */
