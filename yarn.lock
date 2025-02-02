@@ -538,10 +538,8 @@ escape-string-regexp@^4.0.0:
   resolved "https://registry.yarnpkg.com/escape-string-regexp/-/escape-string-regexp-4.0.0.tgz#14ba83a5d373e3d311e5afca29cf5bfad965bf34"
   integrity sha512-TtpcNJ3XAzx3Gq8sWRzJaVajRs0uVxA2YAkdb1jm2YkPz4G6egUFAyA3n5vtEIZefPk5Wa4UXbKuS5fKkJWdgA==
 
-eslint-plugin-userscripts@^0.5.6:
+"eslint-plugin-userscripts@file:/home/spiritomb/git/eslint-plugin-userscripts":
   version "0.5.6"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-userscripts/-/eslint-plugin-userscripts-0.5.6.tgz#345c65b0e23930ade2daf29076d3f65e1022ba73"
-  integrity sha512-/DXb8UKyEkNCzXOA6j4E4rCWn2mLCUw2TMxrzSoz3spi4cyANlE0JNmtRleAmzc1HTUmZXr5fIMCQxyLS73DZQ==
   dependencies:
     semver "^7.3.8"
 

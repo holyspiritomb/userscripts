@@ -10,6 +10,7 @@
 // @connect      cdn.jsdelivr.net
 // @connect      https://cdn.jsdelivr.net
 // @homepageURL  https://github.com/holyspiritomb/userscripts
+// @homepage     https://github.com/holyspiritomb/userscripts
 // @description  Eruda persistent mobile devtools, for troubleshooting on mobile. Targeting mobile Vivaldi via Adguard for Android.
 // @noframes
 // ==/UserScript==

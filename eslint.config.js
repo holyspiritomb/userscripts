@@ -60,8 +60,10 @@ export default [
       "@stylistic/js/semi-style": ["error", "last"],
       "@stylistic/js/space-infix-ops": ["error"],
       "@stylistic/js/switch-colon-spacing": ["warn", {"after": true, "before": false}],
-      "userscripts/require-download-url": 0,
-      "userscripts/use-homepage-and-url": 0,
+      "userscripts/require-download-url": 1,
+      "userscripts/use-homepage-and-url": 1,
+      "userscripts/compat-grant": ["error", {"requireAllCompatible": false, "gmPolyfill": false}],
+      "userscripts/compat-headers": ["error", {"requireAllCompatible": false}],
       "@stylistic/js/space-unary-ops": [
         "warn",
         {
@@ -86,6 +88,7 @@ export default [
     },
     settings: {
       userscriptVersions: {
+        adguard: '*',
         violentmonkey: "*",
       },
     },

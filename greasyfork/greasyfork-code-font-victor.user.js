@@ -7,7 +7,9 @@
 // @description  Inspired by the public domain userstyle here: https://userstyles.org/styles/175353 Versions match Victor Mono npm pkg versions.
 // @license      MIT
 // @homepageURL  https://github.com/holyspiritomb/userscripts
+// @homepage     https://github.com/holyspiritomb/userscripts
 // @updateURL    https://raw.githubusercontent.com/holyspiritomb/userscripts/main/greasyfork/greasyfork-code-font-victor.user.js
+// @downloadURL  https://raw.githubusercontent.com/holyspiritomb/userscripts/main/greasyfork/greasyfork-code-font-victor.user.js
 // @match        https://greasyfork.org/*
 // @match        https://*.greasyfork.org/*
 // @run-at       document-start

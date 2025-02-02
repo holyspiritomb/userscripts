@@ -11,7 +11,9 @@
 // @grant        unsafeWindow
 // @connect      cdn.jsdelivr.net
 // @homepageURL  https://github.com/holyspiritomb/userscripts
+// @homepage     https://github.com/holyspiritomb/userscripts
 // @updateURL    https://raw.githubusercontent.com/holyspiritomb/userscripts/main/global/noto-color-emoji-everywhere.user.js
+// @downloadURL  https://raw.githubusercontent.com/holyspiritomb/userscripts/main/global/noto-color-emoji-everywhere.user.js
 // ==/UserScript==
 
 (function() {

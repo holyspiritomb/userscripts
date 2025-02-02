@@ -12,7 +12,9 @@
 // @grant        GM_getResourceURL
 // @grant        unsafeWindow
 // @homepageURL  https://github.com/holyspiritomb/userscripts
+// @homepage     https://github.com/holyspiritomb/userscripts
 // @updateURL    https://raw.githubusercontent.com/holyspiritomb/userscripts/main/github/code-font.user.js
+// @downloadURL  https://raw.githubusercontent.com/holyspiritomb/userscripts/main/github/code-font.user.js
 // @resource     victorR https://cdn.jsdelivr.net/npm/victormono@1.5.6/dist/woff/VictorMono-Regular.woff
 // @resource     victorRW https://cdn.jsdelivr.net/npm/victormono@1.5.6/dist/woff2/VictorMono-Regular.woff2
 // @resource     victorI https://cdn.jsdelivr.net/npm/victormono@1.5.6/dist/woff/VictorMono-Italic.woff

@@ -5,6 +5,7 @@
 // @version      1.0
 // @description  Apply DarkReader's Tokyo Night colorscheme globally.
 // @homepageURL  https://github.com/holyspiritomb/userscripts/blob/main/global/darkreader.user.js
+// @homepage     https://github.com/holyspiritomb/userscripts/blob/main/global/darkreader.user.js
 // @downloadURL  https://raw.githubusercontent.com/holyspiritomb/userscripts/main/global/darkreader.user.js
 // @license      MIT
 // @match        *://*

@@ -11,7 +11,9 @@
 // @grant        GM_getResourceURL
 // @grant        unsafeWindow
 // @homepageURL  https://github.com/holyspiritomb/userscripts
+// @homepage     https://github.com/holyspiritomb/userscripts
 // @updateURL    https://raw.githubusercontent.com/holyspiritomb/userscripts/main/global/inter-ui-everywhere.user.js
+// @downloadURL  https://raw.githubusercontent.com/holyspiritomb/userscripts/main/global/inter-ui-everywhere.user.js
 // @resource     interReg https://cdn.jsdelivr.net/npm/inter-ui@4.1.0/web/Inter-Regular.woff2
 // @resource     interRegIt https://cdn.jsdelivr.net/npm/inter-ui@4.1.0/web/Inter-Italic.woff2
 // @resource     interMed https://cdn.jsdelivr.net/npm/inter-ui@4.1.0/web/Inter-Medium.woff2
