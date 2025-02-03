@@ -11,6 +11,7 @@
 // @grant        GM_addStyle
 // @grant        GM_getResourceURL
 // @grant        unsafeWindow
+// @icon         https://www.google.com/s2/favicons?domain=github.com
 // @homepageURL  https://github.com/holyspiritomb/userscripts
 // @homepage     https://github.com/holyspiritomb/userscripts
 // @updateURL    https://raw.githubusercontent.com/holyspiritomb/userscripts/main/github/code-font.user.js
