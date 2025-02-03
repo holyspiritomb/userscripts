@@ -7,6 +7,7 @@
 // @version      1.2
 // @author       holyspiritomb
 // @require      https://cdn.jsdelivr.net/npm/eruda@2.5.0
+// @icon         https://www.google.com/s2/favicons?domain=eruda.liriliri.io
 // @connect      cdn.jsdelivr.net
 // @connect      https://cdn.jsdelivr.net
 // @homepageURL  https://github.com/holyspiritomb/userscripts

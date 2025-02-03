@@ -6,6 +6,7 @@
 // @grant        property:settings
 // @version      1.3
 // @author       holyspiritomb
+// @icon         https://www.google.com/s2/favicons?domain=eruda.liriliri.io
 // @require      https://cdn.jsdelivr.net/npm/eruda
 // @connect      cdn.jsdelivr.net
 // @connect      https://cdn.jsdelivr.net

@@ -4,6 +4,7 @@
 // @author       holyspiritomb
 // @version      0.1.0
 // @description  Copy the call number.
+// @icon         https://www.google.com/s2/favicons?domain=loc.gov
 // @homepageURL  https://github.com/holyspiritomb/userscripts
 // @updateURL    https://raw.githubusercontent.com/holyspiritomb/userscripts/main/loc/loc-call-number.user.js
 // @license      MIT
