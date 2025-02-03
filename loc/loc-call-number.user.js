@@ -6,7 +6,9 @@
 // @description  Copy the call number.
 // @icon         https://www.google.com/s2/favicons?domain=loc.gov
 // @homepageURL  https://github.com/holyspiritomb/userscripts
+// @homepage     https://github.com/holyspiritomb/userscripts
 // @updateURL    https://raw.githubusercontent.com/holyspiritomb/userscripts/main/loc/loc-call-number.user.js
+// @downloadURL  https://raw.githubusercontent.com/holyspiritomb/userscripts/main/loc/loc-call-number.user.js
 // @license      MIT
 // @match        https://id.loc.gov/resources/works/*
 // @run-at       document-idle
