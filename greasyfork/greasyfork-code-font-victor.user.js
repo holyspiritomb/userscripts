@@ -16,7 +16,7 @@
 // @grant        GM_addStyle
 // @grant        GM_getResourceURL
 // @grant        unsafeWindow
-// @resource     victorR https://cdn.jsdelivr.net/npm/victormono@1.5.6/dist/woff2/VictorMono-Regular.woff
+// @resource     victorR https://cdn.jsdelivr.net/npm/victormono@1.5.6/dist/woff/VictorMono-Regular.woff
 // @resource     victorRW https://cdn.jsdelivr.net/npm/victormono@1.5.6/dist/woff2/VictorMono-Regular.woff2
 // @resource     victorI https://cdn.jsdelivr.net/npm/victormono@1.5.6/dist/woff/VictorMono-Italic.woff
 // @resource     victorIW https://cdn.jsdelivr.net/npm/victormono@1.5.6/dist/woff2/VictorMono-Italic.woff2
