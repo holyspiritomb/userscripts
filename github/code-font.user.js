@@ -2,8 +2,8 @@
 // @name         Github Code Font: Victor Mono
 // @namespace    https://github.com/holyspiritomb
 // @author       spiritomb
-// @version      1.5.6
-// @description  Makes Github's code font Victor Mono. Targets mobile Chrome-based browsers via Adguard for Android. Versions match Victor Mono npm pkg versions.
+// @version      1.5.6a
+// @description  Makes Github's code font Victor Mono. Targets mobile Chrome-based browsers via Adguard for Android & mobile Iceraven (Firefox) via Violentmonkey.
 // @license      MIT
 // @match        https://github.com/*
 // @match        https://*.github.com/*
@@ -30,6 +30,10 @@
     let victorItalic2 = GM_getResourceURL("victorIW", false);
     var css = "";
     css += `
+            :root {
+                --fontStack-monospace: "Victor Mono", ui-monospace, Menlo, Consolas, Liberation Mono, monospace;
+            }
+
             @font-face {
                 font-family: "Victor Mono";
                 src: url(${victorRegular2}) format("woff2"),
@@ -51,25 +55,29 @@
             .CheckStep-line,
             .blob-code-inner,
             .commit-ref,
-            code,
-            pre,
-            tt,
-            .text-mono,
-            kbd,
-            code .link-gray,
-            .markdown-body code,
-            .markdown-body tt,
             .highlight pre,
+            .markdown-body code,
             .markdown-body pre,
+            .markdown-body tt,
+            .pl-c,
+            .pl-c span,
             .react-blob-print-hide,
+            .react-file-line,
+            .text-mono,
+            code .link-gray,
+            code,
+            kbd,
+            pre,
             textarea#read-only-cursor-text-area,
-            [class^='pl-']{
+            tt,
+            [class^='pl-'] {
                 font-family: "Victor Mono" !important;
             }
-            .pl-c, .pl-c span{
-                font-family: "Victor Mono" !important;
+            .pl-c,
+            .pl-c span {
                 font-style: italic !important;
             }
+
     `;
     if (typeof GM_addStyle != "undefined") {
         GM_addStyle(css);
