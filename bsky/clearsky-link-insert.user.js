@@ -10,7 +10,7 @@
 // @homepage     https://github.com/holyspiritomb/userscripts
 // @updateURL    https://raw.githubusercontent.com/holyspiritomb/userscripts/main/bsky/clearsky-link-insert.user.js
 // @downloadURL  https://raw.githubusercontent.com/holyspiritomb/userscripts/main/bsky/clearsky-link-insert.user.js
-// @version      0.0.2
+// @version      0.0.3
 // @author       holyspiritomb
 // @run-at       document-idle
 // @icon         https://www.google.com/s2/favicons?domain=clearsky.app
