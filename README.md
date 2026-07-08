@@ -1,5 +1,7 @@
 # holyspiritomb's userscripts
 
+[![Crafted by Human](https://madebyhuman.iamjarl.com/badges/crafted-black.svg)](https://madebyhuman.iamjarl.com)
+
 These are userscripts that I work on in my spare time to improve my experiences or add functionality on various sites I use.
 
 ## Disclaimer
