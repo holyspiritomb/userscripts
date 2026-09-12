@@ -2,7 +2,7 @@
 // @name         Github UI Font: Inter UI
 // @namespace    https://github.com/holyspiritomb
 // @author       spiritomb
-// @version      4.1.0
+// @version      4.1.1
 // @description  Use the Inter font for all the non-code text on Github. Version code matches inter font version code.
 // @license      MIT
 // @match        https://github.com/*
@@ -16,12 +16,12 @@
 // @homepage     https://github.com/holyspiritomb/userscripts
 // @updateURL    https://raw.githubusercontent.com/holyspiritomb/userscripts/main/github/github-inter-ui-font.user.js
 // @downloadURL  https://raw.githubusercontent.com/holyspiritomb/userscripts/main/github/github-inter-ui-font.user.js
-// @resource     interReg https://cdn.jsdelivr.net/npm/inter-ui@4.1.0/web/Inter-Regular.woff2
-// @resource     interRegIt https://cdn.jsdelivr.net/npm/inter-ui@4.1.0/web/Inter-Italic.woff2
-// @resource     interMed https://cdn.jsdelivr.net/npm/inter-ui@4.1.0/web/Inter-Medium.woff2
-// @resource     interMedIt https://cdn.jsdelivr.net/npm/inter-ui@4.1.0/web/Inter-MediumItalic.woff2
-// @resource     interBold https://cdn.jsdelivr.net/npm/inter-ui@4.1.0/web/Inter-Bold.woff2
-// @resource     interBoldIt https://cdn.jsdelivr.net/npm/inter-ui@4.1.0/web/Inter-BoldItalic.woff2
+// @resource     interReg https://cdn.jsdelivr.net/npm/inter-ui@4.1.1/web/Inter-Regular.woff2
+// @resource     interRegIt https://cdn.jsdelivr.net/npm/inter-ui@4.1.1/web/Inter-Italic.woff2
+// @resource     interMed https://cdn.jsdelivr.net/npm/inter-ui@4.1.1/web/Inter-Medium.woff2
+// @resource     interMedIt https://cdn.jsdelivr.net/npm/inter-ui@4.1.1/web/Inter-MediumItalic.woff2
+// @resource     interBold https://cdn.jsdelivr.net/npm/inter-ui@4.1.1/web/Inter-Bold.woff2
+// @resource     interBoldIt https://cdn.jsdelivr.net/npm/inter-ui@4.1.1/web/Inter-BoldItalic.woff2
 // ==/UserScript==
 
 (function() {
