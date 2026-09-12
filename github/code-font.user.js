@@ -2,8 +2,8 @@
 // @name         Github Code Font: Victor Mono
 // @namespace    https://github.com/holyspiritomb
 // @author       spiritomb
-// @version      1.5.6a
-// @description  Makes Github's code font Victor Mono. Targets mobile Chrome-based browsers via Adguard for Android & mobile Iceraven (Firefox) via Violentmonkey.
+// @version      2.0.0
+// @description  Makes Github's code font Victor Mono Nerd. Targets mobile Chrome-based browsers via Adguard for Android & mobile Iceraven (Firefox) via Violentmonkey.
 // @license      MIT
 // @match        https://github.com/*
 // @match        https://*.github.com/*
@@ -16,37 +16,31 @@
 // @homepage     https://github.com/holyspiritomb/userscripts
 // @updateURL    https://raw.githubusercontent.com/holyspiritomb/userscripts/main/github/code-font.user.js
 // @downloadURL  https://raw.githubusercontent.com/holyspiritomb/userscripts/main/github/code-font.user.js
-// @resource     victorR https://cdn.jsdelivr.net/npm/victormono@1.5.6/dist/woff/VictorMono-Regular.woff
-// @resource     victorRW https://cdn.jsdelivr.net/npm/victormono@1.5.6/dist/woff2/VictorMono-Regular.woff2
-// @resource     victorI https://cdn.jsdelivr.net/npm/victormono@1.5.6/dist/woff/VictorMono-Italic.woff
-// @resource     victorIW https://cdn.jsdelivr.net/npm/victormono@1.5.6/dist/woff2/VictorMono-Italic.woff2
+// @resource     victorRW https://cdn.jsdelivr.net/gh/Nick2bad4u/nerd-fonts-woff2@main/fonts/woff2/VictorMono/VictorMonoNerdFont-Regular.woff2
+// @resource     victorIW https://cdn.jsdelivr.net/gh/Nick2bad4u/nerd-fonts-woff2@main/fonts/woff2/VictorMono/VictorMonoNerdFont-Italic.woff2
 // ==/UserScript==
 
 (function() {
     // this is hacky but it works?
-    let victorRegular = GM_getResourceURL("victorR", false);
-    let victorRegular2 = GM_getResourceURL("victorRW", false);
-    let victorItalic = GM_getResourceURL("victorI", false);
-    let victorItalic2 = GM_getResourceURL("victorIW", false);
+    let victorRegular = GM_getResourceURL("victorRW", false);
+    let victorItalic = GM_getResourceURL("victorIW", false);
     var css = "";
     css += `
             :root {
-                --fontStack-monospace: "Victor Mono", ui-monospace, Menlo, Consolas, Liberation Mono, monospace;
+                --fontStack-monospace: "Victor Mono Nerd", ui-monospace, Menlo, Consolas, Liberation Mono, monospace;
             }
 
             @font-face {
-                font-family: "Victor Mono";
-                src: url(${victorRegular2}) format("woff2"),
-                    url(${victorRegular}) format("woff");
+                font-family: "Victor Mono Nerd";
+                src: url(${victorRegular}) format("woff2");
                 font-weight: 400;
                 font-style: normal;
                 font-display: swap;
             }
             
             @font-face {
-                font-family: "Victor Mono";
-                src: url(${victorItalic2}) format("woff2"),
-                    url(${victorItalic}) format("woff");
+                font-family: "Victor Mono Nerd";
+                src: url(${victorItalic}) format("woff2");
                 font-weight: 400;
                 font-style: italic;
                 font-display: swap;
@@ -71,7 +65,7 @@
             textarea#read-only-cursor-text-area,
             tt,
             [class^='pl-'] {
-                font-family: "Victor Mono" !important;
+                font-family: "Victor Mono Nerd" !important;
             }
             .pl-c,
             .pl-c span {
